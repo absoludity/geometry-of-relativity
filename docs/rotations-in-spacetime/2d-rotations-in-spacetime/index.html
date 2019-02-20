@@ -12,17 +12,17 @@
     <title>The Lorentz Transformation :: Geometry of Relativity</title>
 
     
-    <link href="/css/nucleus.css?1549684563" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1549684563" rel="stylesheet">
-    <link href="/css/hybrid.css?1549684563" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1549684563" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1549684563" rel="stylesheet">
-    <link href="/css/auto-complete.css?1549684563" rel="stylesheet">
-    <link href="/css/theme.css?1549684563" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1549684563" rel="stylesheet">
+    <link href="/css/nucleus.css?1550632441" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1550632441" rel="stylesheet">
+    <link href="/css/hybrid.css?1550632441" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1550632441" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1550632441" rel="stylesheet">
+    <link href="/css/auto-complete.css?1550632441" rel="stylesheet">
+    <link href="/css/theme.css?1550632441" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1550632441" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1549684563"></script>
+    <script src="/js/jquery-2.x.min.js?1550632441"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -153,14 +153,14 @@ div.notice.tip h5:before {
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1549684563"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1549684563"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1550632441"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1550632441"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/geometry-of-relativity.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1549684563"></script>
+<script type="text/javascript" src="/js/search.js?1550632441"></script>
 
     
   </div>
@@ -568,7 +568,7 @@ rotation itself, ie. <span  class="math">\(\v{A} = x_a\v{x} + t_a\v{t}\)</span>,
 
 <p><span  class="math">\(
 \begin{aligned}
-\v{CBABC}
+\v{e^{\v{xt}\frac{\phi}{2}}Ae^{-\v{xt}\frac{\phi}{2}}}
 &= e^{\v{xt}\frac{\phi}{2}}x_a\v{x}e^{-\v{xt}\frac{\phi}{2}} + t_a\v{t}e^{-\v{xt}\phi} \\
 &= x_a\v{x}e^{-\v{xt}\phi} + t_a\v{t}e^{-\v{xt}\phi} \\
 &= x_a\v{x}(\cosh\phi - \v{y}\sinh\phi) + t_a\v{t}(\cosh\phi - \v{y}\sinh\phi) \\
@@ -603,7 +603,7 @@ and <span  class="math">\(\tanh\phi\)</span> can be <a href="https://en.wikipedi
 <p>So with the substitution of <span  class="math">\(v = \tanh\phi\)</span>, we're left with the Lorentz
 transformation of <span  class="math">\(\v{A} = x_a\v{x} + t_a\v{t}\)</span> (with the speed of light ratio normalized to 1):</p>
 
-<p><span  class="math">\[ \v{CBABC} = \frac{1}{\sqrt{1-v^2}}(x_a - t_av)\v{x} + \frac{1}{\sqrt{1-v^2}}(t_a - x_av)\v{t} \]</span></p>
+<p><span  class="math">\[ \v{e^{\v{xt}\frac{\phi}{2}}Ae^{-\v{xt}\frac{\phi}{2}}} = \frac{1}{\sqrt{1-v^2}}(x_a - t_av)\v{x} + \frac{1}{\sqrt{1-v^2}}(t_a - x_av)\v{t} \]</span></p>
 
 <h3 id="a-vector-perpendicular-to-the-direction-of-rotation">A vector perpendicular to the direction of rotation</h3>
 
@@ -612,7 +612,7 @@ the rotation, ie. <span  class="math">\(\v{A} = y_a\v{y} + t_a\v{t}\)</span>. In
 
 <p><span  class="math">\[
 \begin{aligned}
-\v{CBABC}
+\v{e^{\v{xt}\frac{\phi}{2}}Ae^{-\v{xt}\frac{\phi}{2}}}
 &= y_a\v{y}e^{\v{xt}\frac{\phi}{2}}e^{-\v{xt}\frac{\phi}{2}} + t_a\v{t}e^{-\v{xt}\phi} \\
 &= y_a\v{y} + t_a\v{t}(\cosh\phi - \v{xt}\sinh\phi) \\
 &= y_a\v{y} + t_a\v{t}\cosh\phi - t_a\v{x}\sinh\phi \\
@@ -631,8 +631,17 @@ the rotation, ie. <span  class="math">\(\v{A} = y_a\v{y} + t_a\v{t}\)</span>. In
 <p>is then</p>
 
 <p><span  class="math">\[
-\v{CBABC} = \frac{1}{\sqrt{1-v^2}}(x_a - t_av)\v{x} + y_a\v{y} + \frac{1}{\sqrt{1-v^2}}(t_a - x_av)\v{t}
+\v{e^{\v{xt}\frac{\phi}{2}}Ae^{-\v{xt}\frac{\phi}{2}}} = \frac{1}{\sqrt{1-v^2}}(x_a - t_av)\v{x} + y_a\v{y} + \frac{1}{\sqrt{1-v^2}}(t_a - x_av)\v{t}
 \]</span></p>
+
+<p>Now that we have managed to derive the Lorentz transformation as a geometric
+rotation in Spacetime, it is time to further our understanding of Geometric
+Algebra so that we can remove some of the cognitive load. Up until this point, we
+have been working with a preferred coordinate frame with a set of basis vectors
+<span  class="math">\(\v{x}\)</span> and <span  class="math">\(\v{y}\)</span>, but before we generalise this to the 3 dimensions of
+space and one of time within which we appear to exist, it is worth seeing how
+we can represent the Lorentz transformation without referring to a preferred
+reference frame.</p>
 
 <footer class=" footline" >
 	
@@ -836,20 +845,20 @@ s.setAttribute('data-timestamp', +new Date());
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1549684563"></script>
-    <script src="/js/perfect-scrollbar.min.js?1549684563"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1549684563"></script>
-    <script src="/js/jquery.sticky.js?1549684563"></script>
-    <script src="/js/featherlight.min.js?1549684563"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1549684563"></script>
-    <script src="/js/highlight.pack.js?1549684563"></script>
+    <script src="/js/clipboard.min.js?1550632441"></script>
+    <script src="/js/perfect-scrollbar.min.js?1550632441"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1550632441"></script>
+    <script src="/js/jquery.sticky.js?1550632441"></script>
+    <script src="/js/featherlight.min.js?1550632441"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1550632441"></script>
+    <script src="/js/highlight.pack.js?1550632441"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1549684563"></script>
-    <script src="/js/learn.js?1549684563"></script>
-    <script src="/js/hugo-learn.js?1549684563"></script>
+    <script src="/js/modernizr.custom.71422.js?1550632441"></script>
+    <script src="/js/learn.js?1550632441"></script>
+    <script src="/js/hugo-learn.js?1550632441"></script>
 
-    <link href="/mermaid/mermaid.css?1549684563" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1549684563"></script>
+    <link href="/mermaid/mermaid.css?1550632441" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1550632441"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
