@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-    <title>Euler&#39;s Formula :: Geometry of Relativity</title>
+    <title>Coordinate-free rotations :: Geometry of Relativity</title>
 
     
     <link href="/css/nucleus.css?1551128475" rel="stylesheet">
@@ -136,7 +136,7 @@ div.notice.tip h5:before {
 
 
   </head>
-  <body class="" data-url="/rotations-in-space/eulers-formula/">
+  <body class="" data-url="/coordinate-free-rotations/">
     <nav id="sidebar" class="">
 
 
@@ -199,7 +199,7 @@ div.notice.tip h5:before {
   
     
     <li data-nav-id="/rotations-in-space/" title="Rotations in Space" class="dd-item 
-        parent
+        
         
         
         ">
@@ -226,8 +226,8 @@ div.notice.tip h5:before {
   
     
     <li data-nav-id="/rotations-in-space/eulers-formula/" title="Euler&#39;s Formula" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/rotations-in-space/eulers-formula/">
@@ -387,8 +387,8 @@ div.notice.tip h5:before {
   
     
     <li data-nav-id="/coordinate-free-rotations/" title="Coordinate-free rotations" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/coordinate-free-rotations/">
@@ -488,7 +488,7 @@ div.notice.tip h5:before {
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/absoludity/geometry-of-relativity-source/edit/master/content/rotations-in-space/eulers-formula/_index.mmark" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/absoludity/geometry-of-relativity-source/edit/master/content/coordinate-free-rotations/_index.mmark" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -513,13 +513,7 @@ div.notice.tip h5:before {
             
           
           
-            
-            
-          
-          
-            <a href='/'>The Geometry of Relativity</a> > <a href='/rotations-in-space/'>Rotations in Space</a> > Euler's Formula
-          
-         
+            <a href='/'>The Geometry of Relativity</a> > Coordinate-free rotations
           
          
           
@@ -541,280 +535,83 @@ div.notice.tip h5:before {
         
         <div id="body-inner">
           
-            <h1>Euler&#39;s Formula</h1>
+            <h1>Coordinate-free rotations</h1>
           
 
         
 
 
-<p><a href="https://en.wikipedia.org/wiki/Euler's_formula">Euler's formula</a>, the most
-remarkable formula in mathematics, according to <a href="https://en.wikipedia.org/wiki/Richard_Feynman">Richard Feynman</a>
-and many others, states that for any real number <span  class="math">\(x\)</span>,</p>
+<p>The previous section derived the Lorentz Transformation as a geometric rotation in
+two-dimensional Spacetime. Rather than simply generalising this to three dimensions,
+we will now take the opportunity to further our understanding of Geometric Algebra
+so that we can remove some of the cognitive load of dealing with lots of coordinates.</p>
 
-<p><span  class="math">\[ e^{ix} = \cos x + i \sin x \]</span></p>
+<p>One of the most important aspects of Geometric Algebra is that we can stop thinking
+in terms of coordinates of a specific reference frame, and rather represent everything
+as vectors.</p>
 
-<p>In this section we will derive Euler's formula to get a better understanding of
-how Euler's formula can be used to describe rotations in space and time,
-eventually including the Lorentz transformation.
-</p>
+<p>We will begin by revisiting the two-dimensional rotation in space and move towards
+the Lorentz Transformation with three spatial and one temporal dimension.</p>
 
-<div class="notice tip"><h5>Skip if you prefer...</h5><p>The derivation of Euler's formula may be a little complicated if you've not touched calculus in a while.
-Feel free to skip this section for now and go straight to <a href="../eulers-formula-and-geometric-algebra/">Euler's formula and Geometric Algebra</a>,
-coming back later as you need.</p>
-</div>
+<p></p>
 
 
-<h2 id="finding-a-function-whose-derivative-is-the-function-itself">Finding a function whose derivative is the function itself</h2>
 
-<p>Euler's formula comes about by first considering a function of <span  class="math">\( x \)</span>, for
-which the derivative of the function for any value of <span  class="math">\(x\)</span> has the same value
-as function itself. That is:</p>
 
-<p><span  class="math">\[ \frac{d}{dx}f(x) = f(x) \]</span></p>
 
-<p>If we start with a guess of <span  class="math">\( f(x) = 1 + x \)</span> then we see it is not quite right as</p>
 
-<p><span  class="math">\[ \frac{d}{dx}(1 + x) = 1 \ne (1 + x) \]</span></p>
 
-<p>but we can improve it by adding another term</p>
 
-<p><span  class="math">\[ f(x) = 1 + x + \frac{x^2}{2} \]</span></p>
+<ul class="children children-li">
+	
+    
+	    
+    
+    
 
-<p>which is a little closer in that</p>
+	
+		
+	
+		
+  
 
-<p><span  class="math">\[ \frac{d}{dx}(1 + x + \frac{x^2}{2}) = 1 + x \ne f(x) \]</span></p>
 
-<p>but still not the same. So we improve it again with</p>
+<li>
+<a href="/coordinate-free-rotations/rotations-in-space/" >Rotations in 2D Space revisited</a>
+</li>
 
-<p><span  class="math">\[ f(x) = 1 + x + \frac{x^2}{2} + \frac{x^3}{2\times 3}\]</span></p>
 
-<p>and so on, until we end up with an infinite sum of terms:</p>
 
-<p><span  class="math">\[ f(x) = \frac{x^0}{0!} + \frac{x^1}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + ... = \sum_{k=0}^{\infty} \frac{x^k}{k!} \]</span></p>
 
-<p>We now have a function satisfying <span  class="math">\( \frac{d}{dx} f(x) = f(x) \)</span>.</p>
 
-<div class="notice activity"><h5>The derivative equals the function</h5><p>Take a couple of minutes to see if you can show that the derivative of
-our function:</p>
 
-<p><span  class="math">\[
-f(x) = \sum_{k=0}^{\infty} \frac{x^k}{k!}
-\]</span></p>
+			
+				
+<p><p>Up until now we have represented a two-dimensional rotation defined by two normal vectors
+<span  class="math">\(\v{a}\)</span> and <span  class="math">\(\v{b}\)</span> as <span  class="math">\(e^{\v{xy}\theta}\)</span>, where <span  class="math">\(\theta\)</span> is the angle separating
+the two vectors (in the anti-clockwise direction), and <span  class="math">\(\v{xy}\)</span> is the unit element of
+the two dimensional plane being rotated. In this section we will see that we
+can also define this same rotation, without reference to a specific coordinate
+frame with base vectors <span  class="math">\(\v{x}\)</span> and <span  class="math">\(\v{y}\)</span>, as:</p>
 
-<p>is itself.</p>
+<p><span  class="math">\[ \v{ab} = e^{\v{P}\theta} \]</span></p>
 
-<p><details><p><summary>
-Solution
-</summary></p></p>
+<p>where <span  class="math">\(\v{P}\)</span> is equivalent to <span  class="math">\(\v{xy}\)</span>, representing the unit element of area in the plane,
+but which will be defined without reference to <span  class="math">\(\v{x}\)</span> or <span  class="math">\(\v{y}\)</span>.</p>
 
-<p>We can work out the derivative of each term in the infinite sum of terms,</p>
+<p></p></p>
+				
+			
+		
 
-<p><span  class="math">\[
-\begin{aligned}
-\frac{d}{dx} f(x)
-&= \frac{d}{dx} \sum_{k=0}^{\infty} \frac{x^k}{k!} \\
-&= \sum_{k=0}^{\infty} \frac{kx^{k-1}}{k!} \\
-\end{aligned}
-\]</span></p>
+		
+			
 
-<p>so we can completely remove the term for <span  class="math">\(k=0\)</span> (as zero times anything
-is still zero), and continue:</p>
+		
+	
 
-<p><span  class="math">\[
-\begin{aligned}
-\frac{d}{dx} f(x)
-&= \sum_{k=1}^{\infty} k\frac{x^{k-1}}{k!} \\
-&= \sum_{k=1}^{\infty} \frac{x^{k-1}}{(k - 1)!} \\
-&= \sum_{k=0}^{\infty} \frac{x^k}{k!} \\
-&= f(x)
-\end{aligned}
-\]</span></p>
-
-<p><p>Done!</p>
-</details></p>
-</div>
-
-
-<p>Great, but where does <span  class="math">\(e\)</span> fit in?</p>
-
-<h2 id="understanding-what-an-exponent-is">Understanding what an exponent is</h2>
-
-<p>We learn in high school that <span  class="math">\( 3^2 \times 3 = 3^3 \)</span> and <span  class="math">\( 2^2 \times 2
-\times 2 = 2^4 \)</span> and later that <span  class="math">\( x^2 \times x^2 = x^4 \)</span> etc., but the
-general definition of <a href="https://en.wikipedia.org/wiki/Exponentiation">exponentiation</a>
-is that when multiplying two numbers with the same base (<span  class="math">\( 3^2 \times 3^1 \)</span>),
-the powers (or exponents) are added (<span  class="math">\( 3^{2+1} = 3^3 \)</span>):</p>
-
-<p><span  class="math">\[ b^m \times b^n = b^{m + n} \]</span></p>
-
-<h2 id="our-function-is-an-exponential">Our function is an exponential</h2>
-
-<p>If we take our function which satisfies the property <span  class="math">\(\frac{d}{dx}f(x) = f(x)\)</span>
-we can show that it behaves just like an exponent should, in that:</p>
-
-<details><p><summary>
-<span  class="math">\( f(m) \times f(n) = f(m+n) \)</span>
-</summary></p>
-
-<p>To show this requires quite a bit of re-arranging:</p>
-
-<p><span  class="math">\[
-\begin{aligned}
-f(m) \times f(n)
-&= \sum_{k=0}^{\infty} \frac{m^k}{k!} \times \sum_{k=0}^{\infty} \frac{n^k}{k!} \\
-&= (\frac{m^0}{0!} + \frac{m^1}{1!} + \frac{m^2}{2!} + \frac{m^3}{3!} + ...)
-\times
-(\frac{n^0}{0!} + \frac{n^1}{1!} + \frac{n^2}{2!} + \frac{n^3}{3!} + ...) \\
-&= 1 +
-(\frac{m^1}{1!} + \frac{n^1}{1!}) +
-(\frac{m^2}{2!} + \frac{m^1 n^1}{1! 1!} + \frac{n^2}{2!}) +
-(\frac{m^3}{3!} + \frac{m^2 n^1}{2! 1!} + \frac{m^1 n^2}{1! 2!} + \frac{n^3}{3!}) ... \\
-&= 1 +
-(\frac{m^1}{1!} + \frac{n^1}{1!}) +
-(\frac{m^2}{2!} + \frac{2}{2}\frac{m^1 n^1}{1! 1!} + \frac{n^2}{2!}) +
-(\frac{m^3}{3!} + \frac{3}{3}\frac{m^2 n^1}{2! 1!} + \frac{3}{3}\frac{m^1 n^2}{1! 2!} + \frac{n^3}{3!}) ... \\
-&= \sum_{k=0}^{\infty} \frac{(m + n)^k}{k!} \\
-&= f(m + n)
-\end{aligned}
-\]</span></p>
-</details>
-
-
-<p>Also similar to an exponent, we can show for our function <span  class="math">\( f(x) \)</span>, that
-<span  class="math">\(f(0) = 1\)</span>.</p>
-
-<div class="notice activity"><h5>Identity of f(0)</h5><p>Show that <span  class="math">\(f(0) = 1\)</span> for our function:</p>
-
-<p><span  class="math">\[
-f(x) = \sum_{k=0}^{\infty} \frac{x^k}{k!}
-\]</span></p>
-
-<p><details><p><summary><p>Solution:</p>
-</summary></p></p>
-
-<p>Substituting <span  class="math">\(x=0\)</span>,</p>
-
-<p><span  class="math">\[
-\begin{aligned}
-f(0)
-&= \sum_{k=0}^{\infty} \frac{0^k}{k!} \\
-&= \frac{0^0}{0!} + \frac{0^1}{1!} + \frac{0^2}{2!} + ... \\
-&= 1 + 0 + 0 + ... \\
-&= 1
-\end{aligned}
-\]</span></p>
-
-<p><p>Done!</p>
-</details></p>
-</div>
-
-
-<p>Given that our function <span  class="math">\(f(x)\)</span> behaves just like an exponent should behave, it must be equivalent
-to some number to the power of <span  class="math">\(x\)</span>. We can find that number by working out <span  class="math">\(f(1)\)</span>.</p>
-
-<div class="notice activity"><h5>Find f(1)</h5><p>Show that <span  class="math">\(f(1) \approx 2.717\)</span></p>
-
-<p><details><p><summary><p>Solution:</p>
-</summary></p></p>
-
-<p>Evaluating,</p>
-
-<p><span  class="math">\[
-\begin{aligned}
-f(1) &= \sum_{k=0}^{\infty} \frac{1!}{k!} \\
-&= \sum_{k=0}^{\infty} \frac{1}{k!} \\
-&= \frac{1}{0!} + \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \frac{1}{4!} + \frac{1}{5!} + ... \\
-&= 1 + 1 + 0.5 + 0.1667 + 0.0417 + 0.0083... \\
-&= 2.717
-\end{aligned}
-\]</span></p>
-
-<p><p>The exact value (if we summed to infinity) is assigned a special name in maths, e.</p>
-</details></p>
-</div>
-
-
-<p>So,</p>
-
-<p><span  class="math">\[ e^1 = f(1) = \sum_{k=0}^{\infty} \frac{1}{k!} \approx 2.71828... \]</span></p>
-
-<p>Now any value of our function can be evaluated simply as a power of <span  class="math">\(e\)</span>:</p>
-
-<p><span  class="math">\[ f(3) = e^3 = 2.71828... ^3 = 20.08534...\]</span></p>
-
-<h2 id="derivatives-of-exponentials">Derivatives of exponentials</h2>
-
-<p>What if we need to work with other exponents of <span  class="math">\(e\)</span>, such as <span  class="math">\(e^{3x}\)</span>? How
-do we work out the derivative - how fast <span  class="math">\(e^{3x}\)</span> is changing as <span  class="math">\(x\)</span> changes? Your memory may (or may not) tell you that:</p>
-
-<p><span  class="math">\[ \frac{d}{dx} e^{3x} = 3e^{3x} \]</span></p>
-
-<p>or more generally, if <span  class="math">\(g\)</span> is another function of <span  class="math">\(x\)</span>, that</p>
-
-<p><span  class="math">\[ \frac{d}{dx} e^{g} = \frac{dg}{dx}e^{g} \]</span></p>
-
-<p>This is all we need for our tooling here, though we can also see why this
-is the case given the
-<a href="https://en.wikipedia.org/wiki/Chain_rule">chain rule</a> for derivatives which says that:</p>
-
-<p><span  class="math">\[ \frac{d}{dx}f(g) = \frac{dg}{dx} \times \frac{d}{d g}f(g) \]</span></p>
-
-<p>together with the special property of our function <span  class="math">\(f(x) = e^x\)</span> that
-the derivative at any point is equal to the function itself, <span  class="math">\(\frac{d}{dx}f(x) = f(x)\)</span>.</p>
-
-<h2 id="eulers-formula">Euler's formula</h2>
-
-<p>Now we have enough background to appreciate the beauty of Euler's formula.
-Euler, like <a href="https://en.wikipedia.org/wiki/Roger_Cotes">Roger Cotes</a> before him, noticed that if he evaluated this exponent function with a special type
-of value, an &quot;imaginary&quot; value whose square is negative, the
-result is a combination of the trigonometric functions <span  class="math">\(\cos\)</span> and <span  class="math">\(sin\)</span>.
-That is, if we define <span  class="math">\(i\)</span> such that <span  class="math">\(i^2 = -1\)</span>, and evaluate <span  class="math">\(e^{ix}\)</span>,
-it conveniently splits into two sums, one of the odd powers and one of the even
-powers:</p>
-
-<p><span  class="math">\[
-\begin{aligned}
-e^{ix}
-&= \sum_{k=0}^{\infty} \frac{(ix)^k}{k!} \\
-&= \frac{(ix)^0}{0!} + \frac{(ix)^1}{1!}  + \frac{(ix)^2}{2!} + \frac{(ix)^3}{3!} + \frac{(ix)^4}{4!} ... \\
-&= (1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} ...) +
-i(\frac{x^1}{1!} - \frac{x^3}{3!} + \frac{x^5}{5!} ...) \\
-&= \sum_{k=0}^{\infty}(-1)^{k}\frac{x^{2k}}{2k!}  + i \sum_{k=0}^{\infty}(-1)^k\frac{x^{2k+1}}{(2k+1)!} \\
-&= \cos(x) + i\sin(x)
-\end{aligned}
-\]</span></p>
-
-<p>That is, the two separate summations are the <a href="https://en.wikipedia.org/wiki/Trigonometric_functions#Series_definitions">actual definitions of <span  class="math">\(\cos(x)\)</span>
-and <span  class="math">\(\sin(x)\)</span></a>.</p>
-
-<p>Notice that, with our introduction to Geometric Algebra, we did not need
-to invent an imaginary unit <span  class="math">\(i\)</span> here, as we have already seen that the
-product of basis vectors <span  class="math">\(\mathbf{xy}\)</span> has the same property that <span  class="math">\((\mathbf{xy})^2 =
--1\)</span>, but we will pick up this thread in <a href="../eulers-formula-and-geometric-algebra">Euler's formula and Geometric
-Algebra</a> next.</p>
-
-<h2 id="derivatives-of-cos-and-sin">Derivatives of cos and sin</h2>
-
-<p>It's worth noting that we can calculate the derivative of
-<span  class="math">\(e^{ix}\)</span> and as a result work out the standard derivations
-of <span  class="math">\(\cos\)</span> and <span  class="math">\(sin\)</span> that we may have memorized in school or otherwise:</p>
-
-<p><span  class="math">\[
-\begin{aligned}
-\frac{d}{dx}e^{ix}
-&= ie^{ix} \\
-&= i\cos(x) + i^2\sin(x) \\
-&= -\sin(x) + i\cos(x)
-\end{aligned}
-\]</span></p>
-
-<p>and so comparing the real parts of <span  class="math">\(e^{ix}\)</span> and <span  class="math">\(\frac{d}{dx}e^{ix}\)</span> show that</p>
-
-<p><span  class="math">\[ \frac{d}{dx}\cos(x) = -\sin(x)\]</span></p>
-
-<p>while comparing the imaginary parts show that</p>
-
-<p><span  class="math">\[ \frac{d}{dx}\sin(x) = \cos(x) \]</span></p>
+	
+</ul>
 
 <footer class=" footline" >
 	
@@ -826,7 +623,7 @@ of <span  class="math">\(\cos\)</span> and <span  class="math">\(sin\)</span> th
 
 <script>
 var disqus_config = function () {
-  this.page.url = "https://geometry-of-relativity.net/rotations-in-space/eulers-formula/";
+  this.page.url = "https://geometry-of-relativity.net/coordinate-free-rotations/";
 
 };
 (function() { 
@@ -883,7 +680,6 @@ s.setAttribute('data-timestamp', +new Date());
             
                 
                     
-                    
                 
                 
 
@@ -898,7 +694,6 @@ s.setAttribute('data-timestamp', +new Date());
             
             
                 
-                    
                     
                 
                 
@@ -915,9 +710,6 @@ s.setAttribute('data-timestamp', +new Date());
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1004,6 +796,7 @@ s.setAttribute('data-timestamp', +new Date());
             
                 
                     
+                    
                 
                 
 
@@ -1019,6 +812,9 @@ s.setAttribute('data-timestamp', +new Date());
             
                 
                     
+                        
+                        
+                    
                 
                 
 
@@ -1040,10 +836,10 @@ s.setAttribute('data-timestamp', +new Date());
 
 
         
-            <a class="nav nav-prev" href="/rotations-in-space/" title="Rotations in Space"> <i class="fas fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/rotations-in-spacetime/2d-rotations-in-spacetime/" title="The Lorentz Transformation"> <i class="fas fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/rotations-in-space/eulers-formula-and-geometric-algebra/" title="Euler&#39;s Formula and Geometric Algebra" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/coordinate-free-rotations/rotations-in-space/" title="Rotations in 2D Space revisited" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
         
     </div>
 

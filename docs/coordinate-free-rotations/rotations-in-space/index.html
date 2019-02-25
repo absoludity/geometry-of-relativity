@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-    <title>Euler&#39;s Formula :: Geometry of Relativity</title>
+    <title>Rotations in 2D Space revisited :: Geometry of Relativity</title>
 
     
     <link href="/css/nucleus.css?1551128475" rel="stylesheet">
@@ -136,7 +136,7 @@ div.notice.tip h5:before {
 
 
   </head>
-  <body class="" data-url="/rotations-in-space/eulers-formula/">
+  <body class="" data-url="/coordinate-free-rotations/rotations-in-space/">
     <nav id="sidebar" class="">
 
 
@@ -199,7 +199,7 @@ div.notice.tip h5:before {
   
     
     <li data-nav-id="/rotations-in-space/" title="Rotations in Space" class="dd-item 
-        parent
+        
         
         
         ">
@@ -226,8 +226,8 @@ div.notice.tip h5:before {
   
     
     <li data-nav-id="/rotations-in-space/eulers-formula/" title="Euler&#39;s Formula" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/rotations-in-space/eulers-formula/">
@@ -387,7 +387,7 @@ div.notice.tip h5:before {
   
     
     <li data-nav-id="/coordinate-free-rotations/" title="Coordinate-free rotations" class="dd-item 
-        
+        parent
         
         
         ">
@@ -414,8 +414,8 @@ div.notice.tip h5:before {
   
     
     <li data-nav-id="/coordinate-free-rotations/rotations-in-space/" title="Rotations in 2D Space revisited" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/coordinate-free-rotations/rotations-in-space/">
@@ -488,7 +488,7 @@ div.notice.tip h5:before {
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/absoludity/geometry-of-relativity-source/edit/master/content/rotations-in-space/eulers-formula/_index.mmark" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/absoludity/geometry-of-relativity-source/edit/master/content/coordinate-free-rotations/rotations-in-space/_index.mmark" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -517,7 +517,7 @@ div.notice.tip h5:before {
             
           
           
-            <a href='/'>The Geometry of Relativity</a> > <a href='/rotations-in-space/'>Rotations in Space</a> > Euler's Formula
+            <a href='/'>The Geometry of Relativity</a> > <a href='/coordinate-free-rotations/'>Coordinate-free rotations</a> > Rotations in 2D Space revisited
           
          
           
@@ -541,280 +541,256 @@ div.notice.tip h5:before {
         
         <div id="body-inner">
           
-            <h1>Euler&#39;s Formula</h1>
+            <h1>Rotations in 2D Space revisited</h1>
           
 
         
 
 
-<p><a href="https://en.wikipedia.org/wiki/Euler's_formula">Euler's formula</a>, the most
-remarkable formula in mathematics, according to <a href="https://en.wikipedia.org/wiki/Richard_Feynman">Richard Feynman</a>
-and many others, states that for any real number <span  class="math">\(x\)</span>,</p>
+<p>Up until now we have represented a two-dimensional rotation defined by two normal vectors
+<span  class="math">\(\v{a}\)</span> and <span  class="math">\(\v{b}\)</span> as <span  class="math">\(e^{\v{xy}\theta}\)</span>, where <span  class="math">\(\theta\)</span> is the angle separating
+the two vectors (in the anti-clockwise direction), and <span  class="math">\(\v{xy}\)</span> is the unit element of
+the two dimensional plane being rotated. In this section we will see that we
+can also define this same rotation, without reference to a specific coordinate
+frame with base vectors <span  class="math">\(\v{x}\)</span> and <span  class="math">\(\v{y}\)</span>, as:</p>
 
-<p><span  class="math">\[ e^{ix} = \cos x + i \sin x \]</span></p>
+<p><span  class="math">\[ \v{ab} = e^{\v{P}\theta} \]</span></p>
 
-<p>In this section we will derive Euler's formula to get a better understanding of
-how Euler's formula can be used to describe rotations in space and time,
-eventually including the Lorentz transformation.
-</p>
+<p>where <span  class="math">\(\v{P}\)</span> is equivalent to <span  class="math">\(\v{xy}\)</span>, representing the unit element of area in the plane,
+but which will be defined without reference to <span  class="math">\(\v{x}\)</span> or <span  class="math">\(\v{y}\)</span>.</p>
 
-<div class="notice tip"><h5>Skip if you prefer...</h5><p>The derivation of Euler's formula may be a little complicated if you've not touched calculus in a while.
-Feel free to skip this section for now and go straight to <a href="../eulers-formula-and-geometric-algebra/">Euler's formula and Geometric Algebra</a>,
-coming back later as you need.</p>
-</div>
+<p></p>
 
+<h2 id="the-inner-and-outer-vector-products">The Inner and Outer Vector Products</h2>
 
-<h2 id="finding-a-function-whose-derivative-is-the-function-itself">Finding a function whose derivative is the function itself</h2>
+<p>So far we have represented a two-dimensional vector as either:</p>
 
-<p>Euler's formula comes about by first considering a function of <span  class="math">\( x \)</span>, for
-which the derivative of the function for any value of <span  class="math">\(x\)</span> has the same value
-as function itself. That is:</p>
+<p><span  class="math">\[ \v{a} = a_x\v{x} + a_y\v{y} \]</span></p>
 
-<p><span  class="math">\[ \frac{d}{dx}f(x) = f(x) \]</span></p>
+<p>or alternatively, using a rotation,</p>
 
-<p>If we start with a guess of <span  class="math">\( f(x) = 1 + x \)</span> then we see it is not quite right as</p>
+<p><span  class="math">\[ \v{a} = r_a\v{x}e^{\v{xy}\theta_a} \]</span></p>
 
-<p><span  class="math">\[ \frac{d}{dx}(1 + x) = 1 \ne (1 + x) \]</span></p>
-
-<p>but we can improve it by adding another term</p>
-
-<p><span  class="math">\[ f(x) = 1 + x + \frac{x^2}{2} \]</span></p>
-
-<p>which is a little closer in that</p>
-
-<p><span  class="math">\[ \frac{d}{dx}(1 + x + \frac{x^2}{2}) = 1 + x \ne f(x) \]</span></p>
-
-<p>but still not the same. So we improve it again with</p>
-
-<p><span  class="math">\[ f(x) = 1 + x + \frac{x^2}{2} + \frac{x^3}{2\times 3}\]</span></p>
-
-<p>and so on, until we end up with an infinite sum of terms:</p>
-
-<p><span  class="math">\[ f(x) = \frac{x^0}{0!} + \frac{x^1}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + ... = \sum_{k=0}^{\infty} \frac{x^k}{k!} \]</span></p>
-
-<p>We now have a function satisfying <span  class="math">\( \frac{d}{dx} f(x) = f(x) \)</span>.</p>
-
-<div class="notice activity"><h5>The derivative equals the function</h5><p>Take a couple of minutes to see if you can show that the derivative of
-our function:</p>
+<p>so that the product of two vectors is</p>
 
 <p><span  class="math">\[
-f(x) = \sum_{k=0}^{\infty} \frac{x^k}{k!}
+\v{ab} = (a_x b_x + a_y b_y) + (a_x b_y - a_y b_x)\v{xy}
 \]</span></p>
 
-<p>is itself.</p>
+<p>or equivalently,</p>
+
+<p><span  class="math">\[
+\v{ab} = r_a r_b e^{\v{xy}(\theta_b - \theta_a)}
+\]</span></p>
+
+<p>but both of these representations rely on a coordinate frame with basis vectors <span  class="math">\(\v{x}\)</span> and <span  class="math">\(\v{y}\)</span>.</p>
+
+<p>We want to continue being able to decompose the product of two vectors into its scalar
+and non-scalar parts, but without referring to a specific coordinate frame. To do so,
+we need to be able to define the two distinct parts of</p>
+
+<p><span  class="math">\[
+(a_x b_x + a_y b_y) + (a_x b_y - a_y b_x)\v{xy}
+\]</span></p>
+
+<p>without reference to <span  class="math">\(\v{x}\)</span> or <span  class="math">\(\v{y}\)</span>.</p>
+
+<h3 id="the-inner-product">The Inner Product</h3>
+
+<p>The first of the two parts may be familiar already to some as the dot-product:</p>
+
+<p><span  class="math">\[
+\v{a} \cdot \v{b} = a_x b_x + a_y b_y
+\]</span></p>
+
+<p>This is more formally known as the inner product of the two vectors and, as can
+be seen, has a scalar result. Importantly, the result is already independent of
+the chosen coordinate frame.</p>
+
+<div class="notice activity"><h5>The inner product&#39;s independence of a reference frame</h5><p>Show that the value returned by the dot product of any two vectors is not dependent on
+the chosen reference frame with basis vectors <span  class="math">\(\v{x}\)</span> and <span  class="math">\(\v{y}\)</span>.</p>
 
 <p><details><p><summary>
 Solution
 </summary></p></p>
 
-<p>We can work out the derivative of each term in the infinite sum of terms,</p>
+<p>If we define both vectors as a rotation of the chosen basis vector <span  class="math">\(\v{x}\)</span>, as</p>
 
-<p><span  class="math">\[
-\begin{aligned}
-\frac{d}{dx} f(x)
-&= \frac{d}{dx} \sum_{k=0}^{\infty} \frac{x^k}{k!} \\
-&= \sum_{k=0}^{\infty} \frac{kx^{k-1}}{k!} \\
-\end{aligned}
-\]</span></p>
+<p><span  class="math">\[ \v{a} = r_a \v{x}e^{\v{xy}\theta_a}\text{ and } \v{b} = r_b \v{x}e^{\v{xy}\theta_b} \]</span></p>
 
-<p>so we can completely remove the term for <span  class="math">\(k=0\)</span> (as zero times anything
-is still zero), and continue:</p>
+<p>then we have already seen that the product of these two vectors is</p>
 
-<p><span  class="math">\[
-\begin{aligned}
-\frac{d}{dx} f(x)
-&= \sum_{k=1}^{\infty} k\frac{x^{k-1}}{k!} \\
-&= \sum_{k=1}^{\infty} \frac{x^{k-1}}{(k - 1)!} \\
-&= \sum_{k=0}^{\infty} \frac{x^k}{k!} \\
-&= f(x)
-\end{aligned}
-\]</span></p>
+<p><span  class="math">\[ \v{ab} = r_a r_b e^{\v{xy}(\theta_b - \theta_a)} \]</span></p>
 
-<p><p>Done!</p>
+<p>which is equivalent to</p>
+
+<p><span  class="math">\[ \v{ab} = r_a r_b (\cos(\theta_b - \theta_a) + \v{xy}\sin(\theta_b - \theta_a)) \]</span></p>
+
+<p>Here we can already see that the symmetric part of this result, which is our inner product,
+is independent of any base vector:</p>
+
+<p><span  class="math">\[ \v{a} \cdot \v{b} = r_a r_b \cos(\theta_b - \theta_a) \]</span></p>
+
+<p><p>It depends only on the angular <em>difference</em> between the two vectors, and the magnitudes of the vectors
+themselves. On the other hand, we also see here that the anti-symmetric part of the product,
+the outer product, will not break free of its dependence on the reference frame so easily.</p>
 </details></p>
 </div>
 
 
-<p>Great, but where does <span  class="math">\(e\)</span> fit in?</p>
+<h3 id="the-outer-product">The Outer Product</h3>
 
-<h2 id="understanding-what-an-exponent-is">Understanding what an exponent is</h2>
-
-<p>We learn in high school that <span  class="math">\( 3^2 \times 3 = 3^3 \)</span> and <span  class="math">\( 2^2 \times 2
-\times 2 = 2^4 \)</span> and later that <span  class="math">\( x^2 \times x^2 = x^4 \)</span> etc., but the
-general definition of <a href="https://en.wikipedia.org/wiki/Exponentiation">exponentiation</a>
-is that when multiplying two numbers with the same base (<span  class="math">\( 3^2 \times 3^1 \)</span>),
-the powers (or exponents) are added (<span  class="math">\( 3^{2+1} = 3^3 \)</span>):</p>
-
-<p><span  class="math">\[ b^m \times b^n = b^{m + n} \]</span></p>
-
-<h2 id="our-function-is-an-exponential">Our function is an exponential</h2>
-
-<p>If we take our function which satisfies the property <span  class="math">\(\frac{d}{dx}f(x) = f(x)\)</span>
-we can show that it behaves just like an exponent should, in that:</p>
-
-<details><p><summary>
-<span  class="math">\( f(m) \times f(n) = f(m+n) \)</span>
-</summary></p>
-
-<p>To show this requires quite a bit of re-arranging:</p>
+<p>The second part of the product <span  class="math">\(\v{ab}\)</span> is antisymetric and perhaps
+less familiar:</p>
 
 <p><span  class="math">\[
-\begin{aligned}
-f(m) \times f(n)
-&= \sum_{k=0}^{\infty} \frac{m^k}{k!} \times \sum_{k=0}^{\infty} \frac{n^k}{k!} \\
-&= (\frac{m^0}{0!} + \frac{m^1}{1!} + \frac{m^2}{2!} + \frac{m^3}{3!} + ...)
-\times
-(\frac{n^0}{0!} + \frac{n^1}{1!} + \frac{n^2}{2!} + \frac{n^3}{3!} + ...) \\
-&= 1 +
-(\frac{m^1}{1!} + \frac{n^1}{1!}) +
-(\frac{m^2}{2!} + \frac{m^1 n^1}{1! 1!} + \frac{n^2}{2!}) +
-(\frac{m^3}{3!} + \frac{m^2 n^1}{2! 1!} + \frac{m^1 n^2}{1! 2!} + \frac{n^3}{3!}) ... \\
-&= 1 +
-(\frac{m^1}{1!} + \frac{n^1}{1!}) +
-(\frac{m^2}{2!} + \frac{2}{2}\frac{m^1 n^1}{1! 1!} + \frac{n^2}{2!}) +
-(\frac{m^3}{3!} + \frac{3}{3}\frac{m^2 n^1}{2! 1!} + \frac{3}{3}\frac{m^1 n^2}{1! 2!} + \frac{n^3}{3!}) ... \\
-&= \sum_{k=0}^{\infty} \frac{(m + n)^k}{k!} \\
-&= f(m + n)
-\end{aligned}
+\v{a} \wedge \v{b} = (a_x b_y - a_y b_x)\v{xy}
 \]</span></p>
-</details>
 
+<p>This is knows as the outer product and may be familiar via the closely related
+cross product of three-dimensional vectors, but unlike the cross product, the
+outer product has meaning outside of three dimensional space. Particularly, the result
+is an <em>area</em> in the plane defined by the two vectors <span  class="math">\(\v{a}\)</span> and <span  class="math">\(\v{b}\)</span> (which,
+in two-dimensional space, happens to be the one and only plane <span  class="math">\(\v{xy}\)</span>).</p>
 
-<p>Also similar to an exponent, we can show for our function <span  class="math">\( f(x) \)</span>, that
-<span  class="math">\(f(0) = 1\)</span>.</p>
+<p>As</p>
 
-<div class="notice activity"><h5>Identity of f(0)</h5><p>Show that <span  class="math">\(f(0) = 1\)</span> for our function:</p>
+<p><span  class="math">\[ \v{ab} = r_a r_b e^{\v{xy}\theta} = r_a r_b (\cos\theta + \v{xy}\sin\theta) \]</span></p>
+
+<p>the anti-symmetric outer product must be equal to the anti-symmetric part, so that</p>
+
+<p><span  class="math">\[ \v{a} \wedge \v{b} = \v{xy}\sin\theta \]</span></p>
+
+<p>Although we can now write the product of two vectors as:</p>
 
 <p><span  class="math">\[
-f(x) = \sum_{k=0}^{\infty} \frac{x^k}{k!}
+\v{ab} = \v{a} \cdot \v{b} + \v{a} \wedge \v{b}
 \]</span></p>
 
-<p><details><p><summary><p>Solution:</p>
+<p>we still have not rid ourselves of the dependence on a reference frame, as our outer product
+is dependent on <span  class="math">\(\v{xy}\)</span> - the unit of area in the plane of rotation.</p>
+
+<h2 id="a-unit-area-in-a-plane">A unit area in a plane</h2>
+
+<p>In a specific <span  class="math">\(\v{xy}\)</span> coordinate frame, we have a unit area defined by the orthogonal
+and normal vectors, <span  class="math">\(\v{x}\)</span> and <span  class="math">\(\v{y}\)</span>:</p>
+
+<p><span  class="math">\[
+Unit Area = \v{xy}
+\]</span></p>
+
+<p>Since we are currently working within a two-dimensional space, the area defined
+by <span  class="math">\(\v{a} \wedge \v{b}\)</span> has to lie on the same plane but how can we define
+a unit of area in terms of <span  class="math">\(\v{a}\)</span> and <span  class="math">\(\v{b}\)</span> only? We need to be able
+to normalize the area. Starting with the outer product,</p>
+
+<p><span  class="math">\[
+\v{a} \wedge \v{b} = r_a r_b \v{xy} \sin(\theta)
+\]</span></p>
+
+<p>Taking the magnitude of both sides, given <span  class="math">\(|\v{xy}| = 1\)</span>, gives a formula
+for the magnitude of the area <span  class="math">\(\v{a} \wedge \v{b}\)</span> as</p>
+
+<p><span  class="math">\[
+|\v{a} \wedge \v{b}| = |r_a r_b \sin(\theta)|
+\]</span></p>
+
+<p>which allows us to normalize the area to</p>
+
+<p><span  class="math">\[
+\frac{\v{a} \wedge \v{b}}{|\v{a} \wedge \v{b}|} = \v{xy}
+\]</span></p>
+
+<p>so that we now have an equivalent coordinate-free way to define the unit area in the plane defined by
+the vectors <span  class="math">\(\v{a}\)</span> and <span  class="math">\(\v{b}\)</span>.</p>
+
+<p>We define <span  class="math">\(\v{P}\)</span>, the unit area in the plane, as</p>
+
+<p><span  class="math">\[
+\v{P} = \frac{\v{a} \wedge \v{b}}{|\v{a} \wedge \v{b}|}
+\]</span></p>
+
+<p>so that we can now write the product of two vectors as</p>
+
+<p><span  class="math">\[
+\v{ab} = r_a r_b e^{\v{P}\theta}
+\]</span></p>
+
+<p>Note that this definition of <span  class="math">\(\v{P}\)</span> as the unit area in the plane has an
+orientation of either clockwise or anti-clockwise, matching the direction of
+rotating the vector <span  class="math">\(\v{a}\)</span> to <span  class="math">\(\v{b}\)</span>.</p>
+
+<p>For example, when using the coordinate frame with base vectors <span  class="math">\(\v{x}\)</span> and
+<span  class="math">\(\v{y}\)</span>, we always use <span  class="math">\(\v{xy}\)</span> as the unit of area in the plane, implying that
+rotating <span  class="math">\(\v{x}\)</span> to <span  class="math">\(\v{y}\)</span> in the anti-clockwise direction is to rotate through
+positive <span  class="math">\(\frac{\pi}{2}\)</span> radians - a rotation of <span  class="math">\(e^{\v{xy}\frac{\pi}{2}}\)</span>. If
+we had chosen the unit area in a clockwise orientation, <span  class="math">\(\v{yx}\)</span>, then this same
+rotation would be <span  class="math">\(e^{\v{yx}\frac{-\pi}{2}}\)</span> and the opposite rotation in a clockwise direction
+would require a positive angle, <span  class="math">\(e^{\v{yx}\frac{\pi}{2}}\)</span>.</p>
+
+<p>So if a rotor is defined as <span  class="math">\(\v{ab} = e^{\v{P}\theta}\)</span> where <span  class="math">\(\v{P}\)</span>, the
+unit area in the plane has the same orientation as <span  class="math">\(\v{ab}\)</span>, then the angle <span  class="math">\(\theta\)</span>
+will be positive if the rotation matches this orientation. The opposite
+rotation, <span  class="math">\(\v{ba}\)</span>, using the same definition of the unit plane, will have a negative
+angle, <span  class="math">\(\v{ba} = e^{-\v{P}\theta} \)</span>. Or stating the same thing in a different
+way, the opposite rotation, <span  class="math">\(\v{ba}\)</span>, will rotate through the same (positive)
+angle using the opposite unit plane orientation <span  class="math">\(\v{ba} = e^{-\v{P}\theta} \)</span>.</p>
+
+<h2 id="a-coordinatefree-rotation">A Coordinate-free rotation</h2>
+
+<p>If we define the vectors <span  class="math">\(\v{a}\)</span> and <span  class="math">\(\v{b}\)</span> as normal, so that <span  class="math">\(\v{a}^2 = \v{b}^2 = 1\)</span>, then <span  class="math">\(\v{ab}\)</span>
+defines a rotation just like earlier,</p>
+
+<p><span  class="math">\[ \v{ab} = e^{\v{xy}\theta}\]</span></p>
+
+<p>but we can now represent this rotation in the plane without referring to a specific
+coordinate frame:</p>
+
+<p><span  class="math">\[ \v{ab} = e^{\v{P}\theta}\]</span></p>
+
+<p>where <span  class="math">\(\v{P} = \frac{\v{a} \wedge \v{b}}{|\v{a} \wedge \v{b}|} \)</span>. In two
+dimensions, there is not a big advantage, given that there is only the one
+plane on which we can rotate, but we will see next that in three dimensions
+this becomes more useful. We can now rotate an arbitrary vector <span  class="math">\(\v{d}\)</span>,
+which in two-dimensional space is guaranteed to lie on the same plane as that
+defined by <span  class="math">\(\v{a}\)</span> and <span  class="math">\(\v{b}\)</span>, so that</p>
+
+<p><span  class="math">\[
+\v{dab} = \v{d}e^{\v{P}\theta}
+\]</span></p>
+
+<p>represents the vector <span  class="math">\(\v{d}\)</span> rotated by the angle <span  class="math">\(\theta\)</span> in the direction
+matching the orientation of <span  class="math">\(\v{P}\)</span>.</p>
+
+<div class="notice activity"><h5>Left rotation vs right rotation</h5><p>See if you can show that rotating <span  class="math">\(\v{d}\)</span> by right-multiplying by <span  class="math">\(\v{ab}\)</span>
+as we have above, is identical to left-multiplying <span  class="math">\(\v{d}\)</span> by <span  class="math">\(\v{ba}\)</span>.</p>
+
+<p>That is, that:</p>
+
+<p><span  class="math">\(\v{dab} = \v{bad}\)</span>.</p>
+
+<p>It is helpful to note here that <span  class="math">\(\v{dP} = -\v{Pd}\)</span>, given that in the two-dimensional case,
+<span  class="math">\(\v{P}\)</span> is the pseudo-scalar <span  class="math">\(\v{xy}\)</span>. TODO: fix to not use xy</p>
+
+<p><details><p><summary>
+Solution
 </summary></p></p>
 
-<p>Substituting <span  class="math">\(x=0\)</span>,</p>
-
 <p><span  class="math">\[
 \begin{aligned}
-f(0)
-&= \sum_{k=0}^{\infty} \frac{0^k}{k!} \\
-&= \frac{0^0}{0!} + \frac{0^1}{1!} + \frac{0^2}{2!} + ... \\
-&= 1 + 0 + 0 + ... \\
-&= 1
+\v{dab}
+&= \v{d}e^{\v{P}\theta} \\
+&= \v{d}(\cos(\theta) + \v{P}\sin(\theta)) \\
+&= (\cos(\theta) - \v{P}\sin(\theta))\v{d} \\
+&= (\cos(-\theta) + \v{P}\sin(-\theta))\v{d} \\
+&= e^{-\v{P}\theta}\v{d} \\
+&= \v{bad}
 \end{aligned}
 \]</span></p>
 
-<p><p>Done!</p>
+<p><p>Extra text.</p>
 </details></p>
 </div>
-
-
-<p>Given that our function <span  class="math">\(f(x)\)</span> behaves just like an exponent should behave, it must be equivalent
-to some number to the power of <span  class="math">\(x\)</span>. We can find that number by working out <span  class="math">\(f(1)\)</span>.</p>
-
-<div class="notice activity"><h5>Find f(1)</h5><p>Show that <span  class="math">\(f(1) \approx 2.717\)</span></p>
-
-<p><details><p><summary><p>Solution:</p>
-</summary></p></p>
-
-<p>Evaluating,</p>
-
-<p><span  class="math">\[
-\begin{aligned}
-f(1) &= \sum_{k=0}^{\infty} \frac{1!}{k!} \\
-&= \sum_{k=0}^{\infty} \frac{1}{k!} \\
-&= \frac{1}{0!} + \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \frac{1}{4!} + \frac{1}{5!} + ... \\
-&= 1 + 1 + 0.5 + 0.1667 + 0.0417 + 0.0083... \\
-&= 2.717
-\end{aligned}
-\]</span></p>
-
-<p><p>The exact value (if we summed to infinity) is assigned a special name in maths, e.</p>
-</details></p>
-</div>
-
-
-<p>So,</p>
-
-<p><span  class="math">\[ e^1 = f(1) = \sum_{k=0}^{\infty} \frac{1}{k!} \approx 2.71828... \]</span></p>
-
-<p>Now any value of our function can be evaluated simply as a power of <span  class="math">\(e\)</span>:</p>
-
-<p><span  class="math">\[ f(3) = e^3 = 2.71828... ^3 = 20.08534...\]</span></p>
-
-<h2 id="derivatives-of-exponentials">Derivatives of exponentials</h2>
-
-<p>What if we need to work with other exponents of <span  class="math">\(e\)</span>, such as <span  class="math">\(e^{3x}\)</span>? How
-do we work out the derivative - how fast <span  class="math">\(e^{3x}\)</span> is changing as <span  class="math">\(x\)</span> changes? Your memory may (or may not) tell you that:</p>
-
-<p><span  class="math">\[ \frac{d}{dx} e^{3x} = 3e^{3x} \]</span></p>
-
-<p>or more generally, if <span  class="math">\(g\)</span> is another function of <span  class="math">\(x\)</span>, that</p>
-
-<p><span  class="math">\[ \frac{d}{dx} e^{g} = \frac{dg}{dx}e^{g} \]</span></p>
-
-<p>This is all we need for our tooling here, though we can also see why this
-is the case given the
-<a href="https://en.wikipedia.org/wiki/Chain_rule">chain rule</a> for derivatives which says that:</p>
-
-<p><span  class="math">\[ \frac{d}{dx}f(g) = \frac{dg}{dx} \times \frac{d}{d g}f(g) \]</span></p>
-
-<p>together with the special property of our function <span  class="math">\(f(x) = e^x\)</span> that
-the derivative at any point is equal to the function itself, <span  class="math">\(\frac{d}{dx}f(x) = f(x)\)</span>.</p>
-
-<h2 id="eulers-formula">Euler's formula</h2>
-
-<p>Now we have enough background to appreciate the beauty of Euler's formula.
-Euler, like <a href="https://en.wikipedia.org/wiki/Roger_Cotes">Roger Cotes</a> before him, noticed that if he evaluated this exponent function with a special type
-of value, an &quot;imaginary&quot; value whose square is negative, the
-result is a combination of the trigonometric functions <span  class="math">\(\cos\)</span> and <span  class="math">\(sin\)</span>.
-That is, if we define <span  class="math">\(i\)</span> such that <span  class="math">\(i^2 = -1\)</span>, and evaluate <span  class="math">\(e^{ix}\)</span>,
-it conveniently splits into two sums, one of the odd powers and one of the even
-powers:</p>
-
-<p><span  class="math">\[
-\begin{aligned}
-e^{ix}
-&= \sum_{k=0}^{\infty} \frac{(ix)^k}{k!} \\
-&= \frac{(ix)^0}{0!} + \frac{(ix)^1}{1!}  + \frac{(ix)^2}{2!} + \frac{(ix)^3}{3!} + \frac{(ix)^4}{4!} ... \\
-&= (1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} ...) +
-i(\frac{x^1}{1!} - \frac{x^3}{3!} + \frac{x^5}{5!} ...) \\
-&= \sum_{k=0}^{\infty}(-1)^{k}\frac{x^{2k}}{2k!}  + i \sum_{k=0}^{\infty}(-1)^k\frac{x^{2k+1}}{(2k+1)!} \\
-&= \cos(x) + i\sin(x)
-\end{aligned}
-\]</span></p>
-
-<p>That is, the two separate summations are the <a href="https://en.wikipedia.org/wiki/Trigonometric_functions#Series_definitions">actual definitions of <span  class="math">\(\cos(x)\)</span>
-and <span  class="math">\(\sin(x)\)</span></a>.</p>
-
-<p>Notice that, with our introduction to Geometric Algebra, we did not need
-to invent an imaginary unit <span  class="math">\(i\)</span> here, as we have already seen that the
-product of basis vectors <span  class="math">\(\mathbf{xy}\)</span> has the same property that <span  class="math">\((\mathbf{xy})^2 =
--1\)</span>, but we will pick up this thread in <a href="../eulers-formula-and-geometric-algebra">Euler's formula and Geometric
-Algebra</a> next.</p>
-
-<h2 id="derivatives-of-cos-and-sin">Derivatives of cos and sin</h2>
-
-<p>It's worth noting that we can calculate the derivative of
-<span  class="math">\(e^{ix}\)</span> and as a result work out the standard derivations
-of <span  class="math">\(\cos\)</span> and <span  class="math">\(sin\)</span> that we may have memorized in school or otherwise:</p>
-
-<p><span  class="math">\[
-\begin{aligned}
-\frac{d}{dx}e^{ix}
-&= ie^{ix} \\
-&= i\cos(x) + i^2\sin(x) \\
-&= -\sin(x) + i\cos(x)
-\end{aligned}
-\]</span></p>
-
-<p>and so comparing the real parts of <span  class="math">\(e^{ix}\)</span> and <span  class="math">\(\frac{d}{dx}e^{ix}\)</span> show that</p>
-
-<p><span  class="math">\[ \frac{d}{dx}\cos(x) = -\sin(x)\]</span></p>
-
-<p>while comparing the imaginary parts show that</p>
-
-<p><span  class="math">\[ \frac{d}{dx}\sin(x) = \cos(x) \]</span></p>
 
 <footer class=" footline" >
 	
@@ -826,7 +802,7 @@ of <span  class="math">\(\cos\)</span> and <span  class="math">\(sin\)</span> th
 
 <script>
 var disqus_config = function () {
-  this.page.url = "https://geometry-of-relativity.net/rotations-in-space/eulers-formula/";
+  this.page.url = "https://geometry-of-relativity.net/coordinate-free-rotations/rotations-in-space/";
 
 };
 (function() { 
@@ -883,7 +859,6 @@ s.setAttribute('data-timestamp', +new Date());
             
                 
                     
-                    
                 
                 
 
@@ -898,7 +873,6 @@ s.setAttribute('data-timestamp', +new Date());
             
             
                 
-                    
                     
                 
                 
@@ -915,9 +889,6 @@ s.setAttribute('data-timestamp', +new Date());
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1004,6 +975,7 @@ s.setAttribute('data-timestamp', +new Date());
             
                 
                     
+                    
                 
                 
 
@@ -1019,6 +991,7 @@ s.setAttribute('data-timestamp', +new Date());
             
                 
                     
+                    
                 
                 
 
@@ -1040,10 +1013,10 @@ s.setAttribute('data-timestamp', +new Date());
 
 
         
-            <a class="nav nav-prev" href="/rotations-in-space/" title="Rotations in Space"> <i class="fas fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/coordinate-free-rotations/" title="Coordinate-free rotations"> <i class="fas fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/rotations-in-space/eulers-formula-and-geometric-algebra/" title="Euler&#39;s Formula and Geometric Algebra" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/intro/" title="Intro to Geometric Algebra" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
         
     </div>
 
