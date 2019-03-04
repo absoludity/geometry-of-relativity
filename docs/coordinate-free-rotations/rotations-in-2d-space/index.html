@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-    <title>Coordinate-free rotations :: Geometry of Relativity</title>
+    <title>Rotations in 2D Space revisited :: Geometry of Relativity</title>
 
     
     <link href="/css/nucleus.css?1551666544" rel="stylesheet">
@@ -136,7 +136,7 @@ div.notice.tip h5:before {
 
 
   </head>
-  <body class="" data-url="/coordinate-free-rotations/">
+  <body class="" data-url="/coordinate-free-rotations/rotations-in-2d-space/">
     <nav id="sidebar" class="">
 
 
@@ -388,7 +388,7 @@ div.notice.tip h5:before {
     
     <li data-nav-id="/coordinate-free-rotations/" title="Coordinate-free rotations" class="dd-item 
         parent
-        active
+        
         
         ">
       <a href="/coordinate-free-rotations/">
@@ -414,8 +414,8 @@ div.notice.tip h5:before {
   
     
     <li data-nav-id="/coordinate-free-rotations/rotations-in-2d-space/" title="Rotations in 2D Space revisited" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/coordinate-free-rotations/rotations-in-2d-space/">
@@ -488,7 +488,7 @@ div.notice.tip h5:before {
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/absoludity/geometry-of-relativity-source/edit/master/content/coordinate-free-rotations/_index.mmark" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/absoludity/geometry-of-relativity-source/edit/master/content/coordinate-free-rotations/rotations-in-2d-space/_index.mmark" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -513,7 +513,13 @@ div.notice.tip h5:before {
             
           
           
-            <a href='/'>The Geometry of Relativity</a> > Coordinate-free rotations
+            
+            
+          
+          
+            <a href='/'>The Geometry of Relativity</a> > <a href='/coordinate-free-rotations/'>Coordinate-free rotations</a> > Rotations in 2D Space revisited
+          
+         
           
          
           
@@ -535,59 +541,13 @@ div.notice.tip h5:before {
         
         <div id="body-inner">
           
-            <h1>Coordinate-free rotations</h1>
+            <h1>Rotations in 2D Space revisited</h1>
           
 
         
 
 
-<p>The previous section derived the Lorentz Transformation as a geometric rotation in
-two-dimensional Spacetime. Rather than simply generalising this to three dimensions,
-we will now take the opportunity to further our understanding of Geometric Algebra
-so that we can remove some of the cognitive load of dealing with lots of coordinates.</p>
-
-<p>One of the most important aspects of Geometric Algebra is that we can stop thinking
-in terms of coordinates of a specific reference frame, and rather represent everything
-as vectors.</p>
-
-<p>We will begin by revisiting the two-dimensional rotation in space and move towards
-the Lorentz Transformation with three spatial and one temporal dimension.</p>
-
-<p></p>
-
-
-
-
-
-
-
-
-<ul class="children children-li">
-	
-    
-	    
-    
-    
-
-	
-		
-	
-		
-  
-
-
-<li>
-<a href="/coordinate-free-rotations/rotations-in-2d-space/" >Rotations in 2D Space revisited</a>
-</li>
-
-
-
-
-
-
-			
-				
-<p><p>Up until now we have represented a two-dimensional rotation defined by two normal vectors
+<p>Up until now we have represented a two-dimensional rotation defined by two normal vectors
 <span  class="math">\(\v{a}\)</span> and <span  class="math">\(\v{b}\)</span> as <span  class="math">\(e^{\v{xy}\theta}\)</span>, where <span  class="math">\(\theta\)</span> is the angle separating
 the two vectors (in the anti-clockwise direction), and <span  class="math">\(\v{xy}\)</span> is the unit element of
 the two dimensional plane being rotated. In this section we will see that we
@@ -599,19 +559,262 @@ frame with base vectors <span  class="math">\(\v{x}\)</span> and <span  class="m
 <p>where <span  class="math">\(\v{P}\)</span> is equivalent to <span  class="math">\(\v{xy}\)</span>, representing the unit element of area in the plane,
 but which will be defined without reference to <span  class="math">\(\v{x}\)</span> or <span  class="math">\(\v{y}\)</span>.</p>
 
-<p></p></p>
-				
-			
-		
+<p></p>
 
-		
-			
+<h2 id="the-inner-and-outer-vector-products">The Inner and Outer Vector Products</h2>
 
-		
-	
+<p>So far we have represented a two-dimensional vector as either:</p>
 
-	
-</ul>
+<p><span  class="math">\[ \v{a} = a_x\v{x} + a_y\v{y} \]</span></p>
+
+<p>or alternatively, using a rotation,</p>
+
+<p><span  class="math">\[ \v{a} = |\v{a}|\v{x}e^{\v{xy}\theta_a} \]</span></p>
+
+<p>so that the product of two vectors is</p>
+
+<p><span  class="math">\[
+\v{ab} = (a_x b_x + a_y b_y) + (a_x b_y - a_y b_x)\v{xy}
+\]</span></p>
+
+<p>or equivalently,</p>
+
+<p><span  class="math">\[
+\v{ab} = |\v{a}| |\v{b}| e^{\v{xy}(\theta_b - \theta_a)}
+\]</span></p>
+
+<p>but both of these representations rely on a coordinate frame with basis vectors <span  class="math">\(\v{x}\)</span> and <span  class="math">\(\v{y}\)</span>.</p>
+
+<p>We want to continue being able to decompose the product of two vectors into its scalar
+and non-scalar parts, but without referring to a specific coordinate frame. To do so,
+we need to be able to define the two distinct parts of</p>
+
+<p><span  class="math">\[
+(a_x b_x + a_y b_y) + (a_x b_y - a_y b_x)\v{xy}
+\]</span></p>
+
+<p>without reference to <span  class="math">\(\v{x}\)</span> or <span  class="math">\(\v{y}\)</span>.</p>
+
+<h3 id="the-inner-product">The Inner Product</h3>
+
+<p>The first of the two parts may be familiar already to some as the dot-product:</p>
+
+<p><span  class="math">\[
+\v{a} \cdot \v{b} = a_x b_x + a_y b_y
+\]</span></p>
+
+<p>This is more formally known as the inner product of the two vectors and, as can
+be seen, has a scalar result. But can we show that this result is independent
+of the chosen reference frame?</p>
+
+<div class="notice activity"><h5>The inner product&#39;s independence of a reference frame</h5><p>Show that the value returned by the dot product of any two vectors is not dependent on
+the chosen reference frame with basis vectors <span  class="math">\(\v{x}\)</span> and <span  class="math">\(\v{y}\)</span>.
+Particularly, show that</p>
+
+<p><span  class="math">\[ \v{a} \cdot \v{b} = |\v{a}| |\v{b}| \cos(\theta) \]</span></p>
+
+<p>where <span  class="math">\(\theta\)</span> is the angular difference between <span  class="math">\(\v{a}\)</span> and <span  class="math">\(\v{b}\)</span>.</p>
+
+<p><details><p><summary>
+Solution
+</summary></p></p>
+
+<p>We can define both vectors as a rotation of the chosen basis vector <span  class="math">\(\v{x}\)</span>, as</p>
+
+<p><span  class="math">\[ \v{a} = |\v{a}| \v{x}e^{\v{xy}\theta_a}\text{ and } \v{b} = |\v{b}| \v{x}e^{\v{xy}\theta_b} \]</span></p>
+
+<p>but we can go further and just choose a specific reference frame where <span  class="math">\(\v{a}\)</span> is aligned with
+the basis vector <span  class="math">\(\v{x}\)</span>, so that <span  class="math">\(\theta_a\)</span> is zero and we can write more simply,</p>
+
+<p><span  class="math">\[ \v{a} = |\v{a}|\v{x} \text{ and } \v{b} = |\v{b}| \v{x}e^{\v{xy}\theta} \]</span></p>
+
+<p>The product of these two vectors is then</p>
+
+<p><span  class="math">\[ \v{ab} = |\v{a}| |\v{b}| e^{\v{xy}\theta} \]</span></p>
+
+<p>which is equivalent to</p>
+
+<p><span  class="math">\[ \v{ab} = |\v{a}| |\v{b}| (\cos\theta + \v{xy}\sin\theta) \]</span></p>
+
+<p>Here we can already see that the scalar symmetric part of this result, which is our inner product,
+is independent of any base vector:</p>
+
+<p><span  class="math">\[ \v{a} \cdot \v{b} = |\v{a}| |\v{b}| \cos\theta \]</span></p>
+
+<p><p>This inner product depends only on the angular <em>difference</em> between the two
+vectors, and the magnitudes of the vectors themselves. On the other hand, we
+also see here that the anti-symmetric part of the product, the outer product,
+will not break free of its dependence on the reference frame so easily.</p>
+</details></p>
+</div>
+
+
+<h3 id="the-outer-product">The Outer Product</h3>
+
+<p>The second part of the product <span  class="math">\(\v{ab}\)</span> is antisymetric and perhaps
+less familiar:</p>
+
+<p><span  class="math">\[
+\v{a} \wedge \v{b} = (a_x b_y - a_y b_x)\v{xy}
+\]</span></p>
+
+<p>This is known as the outer product and may be familiar via the closely related
+cross product of three-dimensional vectors, but unlike the cross product, the
+outer product has meaning outside of three dimensional space. Particularly, the result
+is an <em>area</em> in the plane defined by the two vectors <span  class="math">\(\v{a}\)</span> and <span  class="math">\(\v{b}\)</span> (which,
+in two-dimensional space, happens to be the one and only plane <span  class="math">\(\v{xy}\)</span>).</p>
+
+<p>As</p>
+
+<p><span  class="math">\[ \v{ab} = |\v{a}| |\v{b}| e^{\v{xy}\theta} = |\v{a}| |\v{b}| (\cos\theta + \v{xy}\sin\theta) \]</span></p>
+
+<p>the anti-symmetric outer product must be equal to the anti-symmetric part, so that</p>
+
+<p><span  class="math">\[ \v{a} \wedge \v{b} = \v{xy}\sin\theta \]</span></p>
+
+<p>Although we can now write the product of two vectors as:</p>
+
+<p><span  class="math">\[
+\v{ab} = \v{a} \cdot \v{b} + \v{a} \wedge \v{b}
+\]</span></p>
+
+<p>we still have not rid ourselves of the dependence on a reference frame, as our outer product
+is dependent on <span  class="math">\(\v{xy}\)</span> - the unit of area in the plane of rotation.</p>
+
+<h2 id="a-unit-area-in-a-plane">A unit area in a plane</h2>
+
+<p>In a specific <span  class="math">\(\v{xy}\)</span> coordinate frame, we have a unit area defined by the orthogonal
+and normal vectors, <span  class="math">\(\v{x}\)</span> and <span  class="math">\(\v{y}\)</span>:</p>
+
+<p><span  class="math">\[
+Unit Area = \v{xy}
+\]</span></p>
+
+<p>Since we are currently working within a two-dimensional space, the area defined
+by <span  class="math">\(\v{a} \wedge \v{b}\)</span> has to lie on the same plane but how can we define
+a unit of area in terms of <span  class="math">\(\v{a}\)</span> and <span  class="math">\(\v{b}\)</span> only? We need to be able
+to normalize the area. Starting with the outer product,</p>
+
+<p><span  class="math">\[
+\v{a} \wedge \v{b} = |\v{a}| |\v{b}| \v{xy} \sin(\theta)
+\]</span></p>
+
+<p>Taking the magnitude of both sides, given <span  class="math">\(|\v{xy}| = 1\)</span>, gives a formula
+for the magnitude of the area <span  class="math">\(\v{a} \wedge \v{b}\)</span> as</p>
+
+<p><span  class="math">\[
+|\v{a} \wedge \v{b}| = |\v{a}| |\v{b}| |\sin(\theta)|
+\]</span></p>
+
+<p>which allows us to normalize the area to</p>
+
+<p><span  class="math">\[
+\frac{\v{a} \wedge \v{b}}{|\v{a} \wedge \v{b}|} = \v{xy}
+\]</span></p>
+
+<p>so that we now have an equivalent coordinate-free way to define the unit area in the plane defined by
+the vectors <span  class="math">\(\v{a}\)</span> and <span  class="math">\(\v{b}\)</span>.</p>
+
+<p>We define <span  class="math">\(\v{P}\)</span>, the unit area in the plane, as</p>
+
+<p><span  class="math">\[
+\v{P} = \frac{\v{a} \wedge \v{b}}{|\v{a} \wedge \v{b}|}
+\]</span></p>
+
+<p>so that we can now write the product of two vectors as</p>
+
+<p><span  class="math">\[
+\v{ab} = |\v{a}| |\v{b}| e^{\v{P}\theta}
+\]</span></p>
+
+<p>Note that this definition of <span  class="math">\(\v{P}\)</span> as the unit area in the plane has an
+orientation of either clockwise or anti-clockwise, matching the direction of
+rotating the vector <span  class="math">\(\v{a}\)</span> to <span  class="math">\(\v{b}\)</span>.</p>
+
+<p>For example, when using the coordinate frame with base vectors <span  class="math">\(\v{x}\)</span> and
+<span  class="math">\(\v{y}\)</span>, we always use <span  class="math">\(\v{xy}\)</span> as the unit of area in the plane, implying that
+rotating <span  class="math">\(\v{x}\)</span> to <span  class="math">\(\v{y}\)</span> in the anti-clockwise direction is to rotate through
+positive <span  class="math">\(\frac{\pi}{2}\)</span> radians - a rotation of <span  class="math">\(e^{\v{xy}\frac{\pi}{2}}\)</span>. If
+we had chosen the unit area in a clockwise orientation, <span  class="math">\(\v{yx}\)</span>, then this same
+rotation would be <span  class="math">\(e^{\v{yx}\frac{-\pi}{2}}\)</span> and the opposite rotation in a clockwise direction
+would require a positive angle, <span  class="math">\(e^{\v{yx}\frac{\pi}{2}}\)</span>.</p>
+
+<p>So if a rotor is defined as <span  class="math">\(\v{ab} = e^{\v{P}\theta}\)</span> where <span  class="math">\(\v{P}\)</span>, the
+unit area in the plane has the same orientation as <span  class="math">\(\v{ab}\)</span>, then the angle <span  class="math">\(\theta\)</span>
+will be positive if the rotation matches this orientation. The opposite
+rotation, <span  class="math">\(\v{ba}\)</span>, using the same definition of the unit plane, will have a negative
+angle, <span  class="math">\(\v{ba} = e^{-\v{P}\theta} \)</span>. Or stating the same thing in a different
+way, the opposite rotation, <span  class="math">\(\v{ba}\)</span>, will rotate through the same (positive)
+angle using the opposite unit plane orientation <span  class="math">\(\v{ba} = e^{-\v{P}\theta} \)</span>.</p>
+
+<h2 id="a-coordinatefree-rotation">A Coordinate-free rotation</h2>
+
+<p>If we define the vectors <span  class="math">\(\v{a}\)</span> and <span  class="math">\(\v{b}\)</span> as normal, so that <span  class="math">\(\v{a}^2 = \v{b}^2 = 1\)</span>, then <span  class="math">\(\v{ab}\)</span>
+defines a rotation just like earlier,</p>
+
+<p><span  class="math">\[ \v{ab} = e^{\v{xy}\theta}\]</span></p>
+
+<p>but we can now represent this rotation in the plane without referring to a specific
+coordinate frame:</p>
+
+<p><span  class="math">\[ \v{ab} = e^{\v{P}\theta}\]</span></p>
+
+<p>where <span  class="math">\(\v{P} = \frac{\v{a} \wedge \v{b}}{|\v{a} \wedge \v{b}|} \)</span>. In two
+dimensions, there is not a big advantage, given that there is only the one
+plane on which we can rotate, but we will see next that in three dimensions
+this becomes more useful. We can now rotate an arbitrary vector <span  class="math">\(\v{d}\)</span>,
+which in two-dimensional space is guaranteed to lie on the same plane as that
+defined by <span  class="math">\(\v{a}\)</span> and <span  class="math">\(\v{b}\)</span>, so that</p>
+
+<p><span  class="math">\[
+\v{dab} = \v{d}e^{\v{P}\theta}
+\]</span></p>
+
+<p>represents the vector <span  class="math">\(\v{d}\)</span> rotated by the angle <span  class="math">\(\theta\)</span> in the direction
+matching the orientation of <span  class="math">\(\v{P}\)</span>.</p>
+
+<div class="notice activity"><h5>Left rotation vs right rotation</h5><p>See if you can show that rotating <span  class="math">\(\v{d}\)</span> by right-multiplying by <span  class="math">\(\v{ab}\)</span>
+as we have above, is identical to left-multiplying <span  class="math">\(\v{d}\)</span> by <span  class="math">\(\v{ba}\)</span>.</p>
+
+<p>That is, that:</p>
+
+<p><span  class="math">\(\v{dab} = \v{bad}\)</span>.</p>
+
+<p>It is helpful to note here that <span  class="math">\(\v{dP} = -\v{Pd}\)</span>. Remember that in this two-dimensional
+example the unit area in the plane, <span  class="math">\(\v{P}\)</span> will always be equivalent <span  class="math">\(\v{xy}\)</span> for any
+reference frame which we choose (well, it could instead be equivalent to <span  class="math">\(\v{yx}\)</span> depending on
+the orientation of <span  class="math">\(\v{P}\)</span>, but it will not make a difference here). So</p>
+
+<p><span  class="math">\[
+\begin{aligned}
+\v{dP} 
+&= (d_x\v{x} + d_y\v{y})\v{xy} \\
+&= d_x\v{xxy} + d_y\v{yxy} \\
+&= -d_x\v{xyx} - d_y\v{xyy} \\
+&= -\v{xy}(d_x\v{x} + d_y\v{y}) \\
+&= -\v{Pd}
+\end{aligned}
+\]</span></p>
+
+<p><details><p><summary>
+Solution
+</summary></p></p>
+
+<p><span  class="math">\[
+\begin{aligned}
+\v{dab}
+&= \v{d}e^{\v{P}\theta} \\
+&= \v{d}(\cos(\theta) + \v{P}\sin(\theta)) \\
+&= (\cos(\theta) - \v{P}\sin(\theta))\v{d} \\
+&= (\cos(-\theta) + \v{P}\sin(-\theta))\v{d} \\
+&= e^{-\v{P}\theta}\v{d} \\
+&= \v{bad}
+\end{aligned}
+\]</span></p>
+
+<p><p>.</p>
+</details></p>
+</div>
 
 <footer class=" footline" >
 	
@@ -623,7 +826,7 @@ but which will be defined without reference to <span  class="math">\(\v{x}\)</sp
 
 <script>
 var disqus_config = function () {
-  this.page.url = "https://geometry-of-relativity.net/coordinate-free-rotations/";
+  this.page.url = "https://geometry-of-relativity.net/coordinate-free-rotations/rotations-in-2d-space/";
 
 };
 (function() { 
@@ -812,8 +1015,6 @@ s.setAttribute('data-timestamp', +new Date());
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -836,10 +1037,10 @@ s.setAttribute('data-timestamp', +new Date());
 
 
         
-            <a class="nav nav-prev" href="/rotations-in-spacetime/2d-rotations-in-spacetime/" title="The Lorentz Transformation"> <i class="fas fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/coordinate-free-rotations/" title="Coordinate-free rotations"> <i class="fas fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/coordinate-free-rotations/rotations-in-2d-space/" title="Rotations in 2D Space revisited" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/intro/" title="Intro to Geometric Algebra" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
         
     </div>
 
