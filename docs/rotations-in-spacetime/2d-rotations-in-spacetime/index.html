@@ -3,28 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.49.2" />
+    <meta name="generator" content="Hugo 0.69.2" />
     <meta name="description" content="Investigating Special Relativity through geometry using a branch of mathematics called Geometric Algebra">
 <meta name="author" content="Michael Nelson">
 
-    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
-<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
     <title>The Lorentz Transformation :: Geometry of Relativity</title>
 
     
-    <link href="/css/nucleus.css?1551667303" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1551667303" rel="stylesheet">
-    <link href="/css/hybrid.css?1551667303" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1551667303" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1551667303" rel="stylesheet">
-    <link href="/css/auto-complete.css?1551667303" rel="stylesheet">
-    <link href="/css/theme.css?1551667303" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1551667303" rel="stylesheet">
+    <link href="/css/nucleus.css?1590440449" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1590440449" rel="stylesheet">
+    <link href="/css/hybrid.css?1590440449" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1590440449" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1590440449" rel="stylesheet">
+    <link href="/css/auto-complete.css?1590440449" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1590440449" rel="stylesheet">
+    <link href="/css/theme.css?1590440449" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1590440449" rel="stylesheet">
+    
     
 
-    <script src="/js/jquery-2.x.min.js?1551667303"></script>
+    <script src="/js/jquery-3.3.1.min.js?1590440449"></script>
 
-    <style type="text/css">
+    <style>
       :root #header + #content > #left > #rlblock_left{
           display:none !important;
       }
@@ -38,7 +40,23 @@
 
   gtag('config', 'UA-47051063-2');
 </script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            macros: {
+                "\\v": "\\mathbf{#1}",
+                "\\vcOne": "#1_x\\v{x}",
+                "\\vcTwo": "\\vcOne{#1} + #1_y\\v{y}",
+                "\\vcThree": "\\vcTwo{#1} + #1_z\\v{z}",
+                "\\vcFour": "\\vcThree{#1} + #1_t\\v{t}",
+                "\\c": "\\overline{#1}\\thinspace"
+                
+            }
+        });
+    });
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
 <style>
 #header h1 {
   font-size: 2rem;
@@ -149,18 +167,18 @@ div.notice.tip h5:before {
     
         <div class="searchbox">
     <label for="search-by"><i class="fas fa-search"></i></label>
-    <input data-search-input id="search-by" type="text" placeholder="Search...">
-    <span data-search-clear=""><i class="fas fa-close"></i></span>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1551667303"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1551667303"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1590440449"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1590440449"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/geometry-of-relativity.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1551667303"></script>
+<script type="text/javascript" src="/js/search.js?1590440449"></script>
 
     
   </div>
@@ -171,6 +189,8 @@ div.notice.tip h5:before {
         
           
           
+
+
 
 
  
@@ -193,6 +213,8 @@ div.notice.tip h5:before {
 
           
           
+
+
 
 
  
@@ -222,6 +244,8 @@ div.notice.tip h5:before {
             
 
 
+
+
  
   
     
@@ -246,6 +270,8 @@ div.notice.tip h5:before {
             
 
 
+
+
  
   
     
@@ -266,30 +292,6 @@ div.notice.tip h5:before {
 
             
           
-            
-            
-
-
- 
-  
-    
-    <li data-nav-id="/rotations-in-space/2d-rotations-in-space/" title="2D Rotations in Space" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/rotations-in-space/2d-rotations-in-space/">
-          2D Rotations in Space
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
         
         </ul>
               
@@ -299,6 +301,8 @@ div.notice.tip h5:before {
 
           
           
+
+
 
 
  
@@ -328,16 +332,18 @@ div.notice.tip h5:before {
             
 
 
+
+
  
   
     
-    <li data-nav-id="/rotations-in-spacetime/a-vector-in-spacetime/" title="A Vector in Spacetime" class="dd-item 
+    <li data-nav-id="/rotations-in-spacetime/a-vector-in-spacetime/" title="A (para)Vector of space and time" class="dd-item 
         
         
         
         ">
       <a href="/rotations-in-spacetime/a-vector-in-spacetime/">
-          A Vector in Spacetime
+          A (para)Vector of space and time
           
       </a>
       
@@ -350,6 +356,8 @@ div.notice.tip h5:before {
           
             
             
+
+
 
 
  
@@ -362,88 +370,6 @@ div.notice.tip h5:before {
         ">
       <a href="/rotations-in-spacetime/2d-rotations-in-spacetime/">
           The Lorentz Transformation
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-          
-          
-
-
- 
-  
-    
-    <li data-nav-id="/coordinate-free-rotations/" title="Coordinate-free rotations" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/coordinate-free-rotations/">
-          <b>4. </b>Coordinate-free rotations
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
- 
-  
-    
-    <li data-nav-id="/coordinate-free-rotations/rotations-in-2d-space/" title="Rotations in 2D Space revisited" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/coordinate-free-rotations/rotations-in-2d-space/">
-          Rotations in 2D Space revisited
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li data-nav-id="/coordinate-free-rotations/rotations-in-3d-space/" title="Rotations in 3D Space" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/coordinate-free-rotations/rotations-in-3d-space/">
-          Rotations in 3D Space
           
       </a>
       
@@ -500,7 +426,6 @@ div.notice.tip h5:before {
 
 
 
-
         <section id="body">
         <div id="overlay"></div>
         <div class="padding highlightable">
@@ -530,6 +455,8 @@ div.notice.tip h5:before {
                   <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
                   
                   <span class="links">
+                 
+                 
                     
           
           
@@ -543,11 +470,12 @@ div.notice.tip h5:before {
           
             <a href='/'>The Geometry of Relativity</a> > <a href='/rotations-in-spacetime/'>Rotations in Space-Time</a> > The Lorentz Transformation
           
-         
+        
           
-         
+        
           
-           
+        
+                 
                   </span>
                 </div>
                 
@@ -561,119 +489,88 @@ div.notice.tip h5:before {
               </div>
             </div>
             
-
+        <div id="head-tags">
+        
+        </div>
         
         <div id="body-inner">
           
-            <h1>The Lorentz Transformation</h1>
+            <h1>
+              
+              The Lorentz Transformation
+            </h1>
           
 
         
 
 
-<p>In the previous section we saw that we can rotate a space-time multivector <span  class="math">\(\v{A}\)</span> in
-space - using a rotation from one normal vector <span  class="math">\(\v{b}\)</span> to another
-normal vector <span  class="math">\(\v{c}\)</span> to form the rotation <span  class="math">\(\v{bc} =
-e^{\v{xy}\frac{\theta}{2}}\)</span>. We also saw that we can define a normal
-space-time multivector as <span  class="math">\(\v{B} = \v{b}e^{\v{bt}\phi}\)</span>, where <span  class="math">\(\v{b}^2 = 1\)</span>. In this section we will consider a space-time multivector <span  class="math">\(\v{A}\)</span> being
-rotated in <strong>space-time</strong> - using a rotation from one normal multivector
-<span  class="math">\(\v{B}\)</span> to another normal multivector <span  class="math">\(\v{C}\)</span>, and see that
-the result is the standard Lorentz transformation.</p>
 
-<p></p>
+	<p>In the previous section we saw that a combination of a scalar and a vector, a
+paravector, <span  class="math">\(\v{A} = a_0 + \v{a}\)</span>, has an amplitude-squared with the same
+metric as that of spacetime and yet can be rotated like a normal vector such
+that the scalar part is unchanged, while the vector part rotates in space, as
+<span  class="math">\(\v{\c{R}}\v{A}\v{R}\)</span>, where the rotor <span  class="math">\(\v{R}\)</span> is itself comprised of a
+scalar and a bivector, <span  class="math">\(\v{R} = e^{-\v{xy}\frac{\theta}{2}}\)</span>.</p>
 
-<h2 id="a-simplified-spacetime-rotation">A simplified Space-Time rotation</h2>
+<p>We also saw that we can define a normalised paravector as <span  class="math">\(\v{B} =
+e^{-\v{b}\frac{\phi}{2}}\)</span>, so that <span  class="math">\(\v{B}\c{\v{B}} = 1\)</span>. In this section we will
+consider rotating the paravector <span  class="math">\(\v{A}\)</span> by a normalized paravector and
+see that the result, <span  class="math">\(\v{B}\v{A}\v{B}\)</span>, is equivalent to the standard
+Lorentz transformation.</p>
 
-<p>If we were to do a generic space-time multivector rotation, the rotation would be:</p>
+<h2 id="a-hyperbolic-rotation">A hyperbolic rotation</h2>
 
-<p><span  class="math">\[
-\begin{aligned}
-\v{BC}
-&= \v{b}e^{\v{bt}\phi_B}\v{c}e^{\v{ct}\phi_C} \\
-\end{aligned}
-\]</span></p>
-
-<p>but we are going to simplify this in two ways. First by assuming that the
-vector component of both <span  class="math">\(\v{B}\)</span> and <span  class="math">\(\v{C}\)</span> are equal, and
-second that they are equal to the basis vector <span  class="math">\(\v{x}\)</span>. In which
-case we get a much simplified rotation:</p>
+<p>Similar to the spatial rotation, we can see that <span  class="math">\(\v{A'} = \v{B}\v{A}\v{B}\)</span>
+is some type of rotation of <span  class="math">\(\v{A}\)</span>, as even though we are not using the
+Clifford conjugation of the rotor for the left-hand multilication, the amplitude
+squared is still unchanged:</p>
 
 <p><span  class="math">\[
 \begin{aligned}
-\v{BC}
-&= \v{x}e^{\v{xt}\phi_B}\v{x}e^{\v{xt}\phi_C} \\
-&= e^{-\v{xt}\phi_B}\v{xx}e^{\v{xt}\phi_C} \\
-&= e^{\v{xt}(\phi_C-\phi_B)} \\
-&= e^{-\v{xt}\phi}
+\v{\c{A'}A'}
+&= \c{\v{B}\v{A}\v{B}} \v{B}\v{A}\v{B} \\
+&= \c{\v{B}}\c{\v{A}}\c{\v{B}} \v{B}\v{A}\v{B} \\
+&= \v{\c{A}A}
 \end{aligned}
 \]</span></p>
 
-<p>where <span  class="math">\(\phi = \phi_B - \phi_C\)</span> is the angle between <span  class="math">\(\v{B}\)</span> and <span  class="math">\(\v{C}\)</span>.</p>
-
-<p>Similar to <a href="../a-vector-in-spacetime/">spatial rotations of space-time multivectors</a>, <span  class="math">\(\v{BC}\)</span> will not work as a rotation by simple multiplication:</p>
-
-<p><span  class="math">\[ (\v{ABC})^2 = \v{ABCABC} \neq \v{A}^2 \]</span></p>
-
-<p>but if we left and right multiply then the magnitude-squared remains constant, as it must under a rotation:</p>
+<p>Evaluating <span  class="math">\(\v{A'}\)</span>, we find</p>
 
 <p><span  class="math">\[
 \begin{aligned}
-(\v{CBABC})^2
-&= \v{CBABCCBABC} \\
-&= \v{CBAABC} \\
-&= \v{CBBCA}^2 \\
-&= \v{A}^2 \\
+\v{A'}
+&= \v{B}\v{A}\v{B} \\
+&= e^{-\v{b}\frac{\phi}{2}}(a_0 + \v{a})e^{-\v{b}\frac{\phi}{2}} \\
+&= a_0 e^{-\v{b}\phi} + e^{-\v{b}\frac{\phi}{2}} \v{a}e^{-\v{b}\frac{\phi}{2}}
 \end{aligned}
 \]</span></p>
 
-<p>Given that we are now applying tho rotation twice, we define <span  class="math">\(\phi\)</span> as double the angle between <span  class="math">\(\v{B}\)</span> and <span  class="math">\(\v{C}\)</span>:</p>
-
-<p><span  class="math">\[ \v{BC} = e^{-\v{xt}\frac{\phi}{2}} \]</span></p>
-
-<p>with the result that:</p>
-
-<p><span  class="math">\[
-\begin{aligned}
-\v{CBABC}
-&= e^{\v{xt}\frac{\phi}{2}}(\v{a} + t_a\v{t})e^{-\v{xt}\frac{\phi}{2}} \\
-&= e^{\v{xt}\frac{\phi}{2}}\v{a}e^{-\v{xt}\frac{\phi}{2}} + e^{\v{xt}\frac{\phi}{2}}t_a\v{t}e^{-\v{xt}\frac{\phi}{2}} \\
-&= e^{\v{xt}\frac{\phi}{2}}\v{a}e^{-\v{xt}\frac{\phi}{2}} + t_a\v{t}e^{-\v{xt}\phi}
-\end{aligned}
-\]</span></p>
+<p>which is, in fact...</p>
 
 <h2 id="the-lorentz-transformation">The Lorentz Transformation</h2>
 
-<h3 id="a-vector-in-the-direction-of-rotation">A vector in the direction of rotation</h3>
+<h3 id="a-vector-in-the-same-direction-as-the-rotation">A vector in the same direction as the rotation</h3>
 
-<p>If we first look at the case where the vector being rotated is in the same direction as the
-rotation itself, ie. <span  class="math">\(\v{A} = x_a\v{x} + t_a\v{t}\)</span>, we can further simplify the rotation:</p>
+<p>If we first look at the case where the vector being rotated is in the same
+direction as the rotation itself, ie. <span  class="math">\(\v{a}\v{b} = \v{b}\v{a} = |\v{a}|\)</span>
+and since <span  class="math">\(\v{b}^2 = 1\)</span>, then <span  class="math">\(\v{a} = |\v{a}|\v{b}\)</span>, we can further simplify the rotation:</p>
 
 <p><span  class="math">\(
 \begin{aligned}
-\v{e^{\v{xt}\frac{\phi}{2}}Ae^{-\v{xt}\frac{\phi}{2}}}
-&= e^{\v{xt}\frac{\phi}{2}}x_a\v{x}e^{-\v{xt}\frac{\phi}{2}} + t_a\v{t}e^{-\v{xt}\phi} \\
-&= x_a\v{x}e^{-\v{xt}\phi} + t_a\v{t}e^{-\v{xt}\phi} \\
-&= x_a\v{x}(\cosh\phi - \v{y}\sinh\phi) + t_a\v{t}(\cosh\phi - \v{y}\sinh\phi) \\
-&= \v{x}(x_a\cosh\phi - t_a\sinh\phi) + \v{t}(t_a\cosh\phi - x_a\sinh\phi) \\
-&= \cosh\phi(x_a - t_a\tanh\phi)\v{x} + \cosh\phi(t_a - x_a\tanh\phi)\v{t}
+\v{A'}
+&= a_0 e^{-\v{b}\phi} + e^{-\v{b}\frac{\phi}{2}} \v{a}e^{-\v{b}\frac{\phi}{2}} \\
+&= a_0 e^{-\v{b}\phi} + \v{a}e^{-\v{b}\phi} \\
+&= a_0 (\cosh{\phi} - \v{b} \sinh{\phi}) + \v{a}(\cosh{\phi} - \v{b} \sinh{\phi}) \\
+&= (a_0 \cosh{\phi} - \v{ab}\sinh{\phi}) + (\v{a}\cosh{\phi} - a_0 \v{b} \sinh{\phi}) \\ 
+&= (a_0 \cosh{\phi} - |\v{a}|\sinh{\phi}) + \v{b}(|\v{a}|\cosh{\phi} - a_0 \sinh{\phi}) \\ 
+&= \cosh{\phi}(a_0 - |\v{a}|\tanh{\phi}) + \v{b}\cosh{\phi}(|\v{a}| - a_0 \tanh{\phi}) \\ 
 \end{aligned}
 \)</span>
-
 <figure class="inline">
-    
-        <img src="/sinh_cosh_tanh.svg.png" width="300px" />
-    
-    
-    <figcaption>
-        <h4>Plotting sinh, cosh and tanh</h4>
-        <p>
-        
-        <a href="https://en.wikipedia.org/wiki/File:Sinh_cosh_tanh.svg"> 
-            Wikimedia Commons
-        </a> 
-        </p> 
-    </figcaption>
-    
+    <img src="/sinh_cosh_tanh.svg.png" width="300px"/> <figcaption>
+            <h4>Plotting sinh, cosh and tanh</h4><p>
+                    <a href="https://en.wikipedia.org/wiki/File:Sinh_cosh_tanh.svg">Wikimedia Commons</a></p>
+        </figcaption>
 </figure>
 </p>
 
@@ -683,47 +580,28 @@ and <span  class="math">\(\tanh\phi\)</span> can be <a href="https://en.wikipedi
 <p><span  class="math">\[ \cosh\phi = \frac{1}{\sqrt{1-\tan^2\phi}} \]</span></p>
 
 <p>So with the substitution of <span  class="math">\(v = \tanh\phi\)</span>, we're left with the Lorentz
-transformation of <span  class="math">\(\v{A} = x_a\v{x} + t_a\v{t}\)</span> (with the speed of light ratio normalized to 1):</p>
+transformation of <span  class="math">\(\v{A} = a_0 + \v{a}\)</span>:</p>
 
-<p><span  class="math">\[ \v{e^{\v{xt}\frac{\phi}{2}}Ae^{-\v{xt}\frac{\phi}{2}}} = \frac{1}{\sqrt{1-v^2}}(x_a - t_av)\v{x} + \frac{1}{\sqrt{1-v^2}}(t_a - x_av)\v{t} \]</span></p>
+<p><span  class="math">\[ \v{B}\v{A}\v{B} = \frac{1}{\sqrt{1-v^2}}(a_0 - |\v{a}|v) + \frac{1}{\sqrt{1-v^2}}(|\v{a}| - a_0 v)\v{x} \]</span></p>
 
-<h3 id="a-vector-perpendicular-to-the-direction-of-rotation">A vector perpendicular to the direction of rotation</h3>
+<h3 id="a-vector-perpendicular-to-the-direction-of-the-rotation">A vector perpendicular to the direction of the rotation</h3>
 
 <p>Next let us look at the case where the vector being rotated is perpendicular to
-the rotation, ie. <span  class="math">\(\v{A} = y_a\v{y} + t_a\v{t}\)</span>. In this case:</p>
+the rotation, ie. <span  class="math">\(\v{a}\v{b} = -\v{b}\v{a}\)</span>. In this case:</p>
 
 <p><span  class="math">\[
 \begin{aligned}
-\v{e^{\v{xt}\frac{\phi}{2}}Ae^{-\v{xt}\frac{\phi}{2}}}
-&= y_a\v{y}e^{\v{xt}\frac{\phi}{2}}e^{-\v{xt}\frac{\phi}{2}} + t_a\v{t}e^{-\v{xt}\phi} \\
-&= y_a\v{y} + t_a\v{t}(\cosh\phi - \v{xt}\sinh\phi) \\
-&= y_a\v{y} + t_a\v{t}\cosh\phi - t_a\v{x}\sinh\phi \\
-&= y_a\v{y} + \frac{t_a}{\sqrt{1-v^2}}\v{t} - \frac{v t_a}{\sqrt{1-v^2}}\v{x} \\
+\v{A'}
+&= a_0 e^{-\v{b}\phi} + e^{-\v{b}\frac{\phi}{2}} \v{a}e^{-\v{b}\frac{\phi}{2}} \\
+&= a_0 e^{-\v{b}\phi} + \v{a}e^{+\v{b}\frac{\phi}{2}} e^{-\v{b}\frac{\phi}{2}} \\
+&= a_0 e^{-\v{b}\phi} + \v{a} \\
 \end{aligned}
 \]</span></p>
 
-<p>So the component perpendicular to the direction of the rotation is not affected by the transformation, just as with the Lorentz transformation.</p>
+<p>So the vector perpendicular to the direction of the rotation is not affected by the transformation, just as with the Lorentz transformation.</p>
 
-<h3 id="a-general-2dimensional-spacetime-vector">A general 2-dimensional space-time vector</h3>
 
-<p>The space-time rotation of <span  class="math">\(e^{\v{xt}\phi}\)</span> of a general 2-dimensional multivector:</p>
 
-<p><span  class="math">\[ \v{A} = x_a\v{x} + y_a\v{y} + t_a\v{t}\]</span></p>
-
-<p>is then</p>
-
-<p><span  class="math">\[
-\v{e^{\v{xt}\frac{\phi}{2}}Ae^{-\v{xt}\frac{\phi}{2}}} = \frac{1}{\sqrt{1-v^2}}(x_a - t_av)\v{x} + y_a\v{y} + \frac{1}{\sqrt{1-v^2}}(t_a - x_av)\v{t}
-\]</span></p>
-
-<p>Now that we have managed to derive the Lorentz transformation as a geometric
-rotation in Spacetime, it is time to further our understanding of Geometric
-Algebra so that we can remove some of the cognitive load. Up until this point, we
-have been working with a preferred coordinate frame with a set of basis vectors
-<span  class="math">\(\v{x}\)</span> and <span  class="math">\(\v{y}\)</span>, but before we generalise this to the 3 dimensions of
-space and one of time within which we appear to exist, it is worth seeing how
-we can represent the Lorentz transformation without referring to a preferred
-reference frame.</p>
 
 <footer class=" footline" >
 	
@@ -834,22 +712,6 @@ s.setAttribute('data-timestamp', +new Date());
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -908,71 +770,21 @@ s.setAttribute('data-timestamp', +new Date());
             
         
                     
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
             
         
         
         
 
 
-        
-            <a class="nav nav-prev" href="/rotations-in-spacetime/a-vector-in-spacetime/" title="A Vector in Spacetime"> <i class="fas fa-chevron-left"></i></a>
-        
-        
-            <a class="nav nav-next" href="/coordinate-free-rotations/" title="Coordinate-free rotations" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
-        
+	 
+	 
+		
+			<a class="nav nav-prev" href="/rotations-in-spacetime/a-vector-in-spacetime/" title="A (para)Vector of space and time"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/rotations-in-spacetime/a-vector-in-spacetime/" title="A (para)Vector of space and time" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
     </div>
 
     </section>
@@ -980,39 +792,24 @@ s.setAttribute('data-timestamp', +new Date());
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1551667303"></script>
-    <script src="/js/perfect-scrollbar.min.js?1551667303"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1551667303"></script>
-    <script src="/js/jquery.sticky.js?1551667303"></script>
-    <script src="/js/featherlight.min.js?1551667303"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1551667303"></script>
-    <script src="/js/highlight.pack.js?1551667303"></script>
+    <script src="/js/clipboard.min.js?1590440449"></script>
+    <script src="/js/perfect-scrollbar.min.js?1590440449"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1590440449"></script>
+    <script src="/js/jquery.sticky.js?1590440449"></script>
+    <script src="/js/featherlight.min.js?1590440449"></script>
+    <script src="/js/highlight.pack.js?1590440449"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1551667303"></script>
-    <script src="/js/learn.js?1551667303"></script>
-    <script src="/js/hugo-learn.js?1551667303"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1590440449"></script>
+    <script src="/js/learn.js?1590440449"></script>
+    <script src="/js/hugo-learn.js?1590440449"></script>
 
-    <link href="/mermaid/mermaid.css?1551667303" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1551667303"></script>
+    <link href="/mermaid/mermaid.css?1590440449" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1590440449"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        renderMathInElement(document.body, {
-            macros: {
-                "\\v": "\\mathbf{#1}",
-                "\\vcOne": "#1_x\\v{x}",
-                "\\vcTwo": "\\vcOne{#1} + #1_y\\v{y}",
-                "\\vcThree": "\\vcTwo{#1} + #1_z\\v{z}",
-                "\\vcFour": "\\vcThree{#1} + #1_t\\v{t}",
-                
-            }
-        });
-    });
-</script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
 
   </body>
 </html>

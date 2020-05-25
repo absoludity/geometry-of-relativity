@@ -3,28 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.49.2" />
+    <meta name="generator" content="Hugo 0.69.2" />
     <meta name="description" content="Investigating Special Relativity through geometry using a branch of mathematics called Geometric Algebra">
 <meta name="author" content="Michael Nelson">
 
-    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
-<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
     <title>Intro to Geometric Algebra :: Geometry of Relativity</title>
 
     
-    <link href="/css/nucleus.css?1551667303" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1551667303" rel="stylesheet">
-    <link href="/css/hybrid.css?1551667303" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1551667303" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1551667303" rel="stylesheet">
-    <link href="/css/auto-complete.css?1551667303" rel="stylesheet">
-    <link href="/css/theme.css?1551667303" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1551667303" rel="stylesheet">
+    <link href="/css/nucleus.css?1590440449" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1590440449" rel="stylesheet">
+    <link href="/css/hybrid.css?1590440449" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1590440449" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1590440449" rel="stylesheet">
+    <link href="/css/auto-complete.css?1590440449" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1590440449" rel="stylesheet">
+    <link href="/css/theme.css?1590440449" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1590440449" rel="stylesheet">
+    
     
 
-    <script src="/js/jquery-2.x.min.js?1551667303"></script>
+    <script src="/js/jquery-3.3.1.min.js?1590440449"></script>
 
-    <style type="text/css">
+    <style>
       :root #header + #content > #left > #rlblock_left{
           display:none !important;
       }
@@ -38,7 +40,23 @@
 
   gtag('config', 'UA-47051063-2');
 </script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            macros: {
+                "\\v": "\\mathbf{#1}",
+                "\\vcOne": "#1_x\\v{x}",
+                "\\vcTwo": "\\vcOne{#1} + #1_y\\v{y}",
+                "\\vcThree": "\\vcTwo{#1} + #1_z\\v{z}",
+                "\\vcFour": "\\vcThree{#1} + #1_t\\v{t}",
+                "\\c": "\\overline{#1}\\thinspace"
+                
+            }
+        });
+    });
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
 <style>
 #header h1 {
   font-size: 2rem;
@@ -149,18 +167,18 @@ div.notice.tip h5:before {
     
         <div class="searchbox">
     <label for="search-by"><i class="fas fa-search"></i></label>
-    <input data-search-input id="search-by" type="text" placeholder="Search...">
-    <span data-search-clear=""><i class="fas fa-close"></i></span>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1551667303"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1551667303"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1590440449"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1590440449"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/geometry-of-relativity.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1551667303"></script>
+<script type="text/javascript" src="/js/search.js?1590440449"></script>
 
     
   </div>
@@ -171,6 +189,8 @@ div.notice.tip h5:before {
         
           
           
+
+
 
 
  
@@ -193,6 +213,8 @@ div.notice.tip h5:before {
 
           
           
+
+
 
 
  
@@ -222,6 +244,8 @@ div.notice.tip h5:before {
             
 
 
+
+
  
   
     
@@ -246,6 +270,8 @@ div.notice.tip h5:before {
             
 
 
+
+
  
   
     
@@ -266,30 +292,6 @@ div.notice.tip h5:before {
 
             
           
-            
-            
-
-
- 
-  
-    
-    <li data-nav-id="/rotations-in-space/2d-rotations-in-space/" title="2D Rotations in Space" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/rotations-in-space/2d-rotations-in-space/">
-          2D Rotations in Space
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
         
         </ul>
               
@@ -299,6 +301,8 @@ div.notice.tip h5:before {
 
           
           
+
+
 
 
  
@@ -328,16 +332,18 @@ div.notice.tip h5:before {
             
 
 
+
+
  
   
     
-    <li data-nav-id="/rotations-in-spacetime/a-vector-in-spacetime/" title="A Vector in Spacetime" class="dd-item 
+    <li data-nav-id="/rotations-in-spacetime/a-vector-in-spacetime/" title="A (para)Vector of space and time" class="dd-item 
         
         
         
         ">
       <a href="/rotations-in-spacetime/a-vector-in-spacetime/">
-          A Vector in Spacetime
+          A (para)Vector of space and time
           
       </a>
       
@@ -350,6 +356,8 @@ div.notice.tip h5:before {
           
             
             
+
+
 
 
  
@@ -362,88 +370,6 @@ div.notice.tip h5:before {
         ">
       <a href="/rotations-in-spacetime/2d-rotations-in-spacetime/">
           The Lorentz Transformation
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-          
-          
-
-
- 
-  
-    
-    <li data-nav-id="/coordinate-free-rotations/" title="Coordinate-free rotations" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/coordinate-free-rotations/">
-          <b>4. </b>Coordinate-free rotations
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
- 
-  
-    
-    <li data-nav-id="/coordinate-free-rotations/rotations-in-2d-space/" title="Rotations in 2D Space revisited" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/coordinate-free-rotations/rotations-in-2d-space/">
-          Rotations in 2D Space revisited
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li data-nav-id="/coordinate-free-rotations/rotations-in-3d-space/" title="Rotations in 3D Space" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/coordinate-free-rotations/rotations-in-3d-space/">
-          Rotations in 3D Space
           
       </a>
       
@@ -500,7 +426,6 @@ div.notice.tip h5:before {
 
 
 
-
         <section id="body">
         <div id="overlay"></div>
         <div class="padding highlightable">
@@ -530,6 +455,8 @@ div.notice.tip h5:before {
                   <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
                   
                   <span class="links">
+                 
+                 
                     
           
           
@@ -539,9 +466,10 @@ div.notice.tip h5:before {
           
             <a href='/'>The Geometry of Relativity</a> > Intro to Geometric Algebra
           
-         
+        
           
-           
+        
+                 
                   </span>
                 </div>
                 
@@ -555,27 +483,32 @@ div.notice.tip h5:before {
               </div>
             </div>
             
-
+        <div id="head-tags">
+        
+        </div>
         
         <div id="body-inner">
           
-            <h1>Intro to Geometric Algebra</h1>
+            <h1>
+              
+              Intro to Geometric Algebra
+            </h1>
           
 
         
 
 
-<p>Geometric Algebra is a line of Mathematics which treats vectors as first-class
+
+	<p>Geometric Algebra is a line of Mathematics which treats vectors as first-class
 citizens, rather than arrows defined by coordinates on a coordinate
 system.</p>
 
-<p>For a flat Euclidean space, Geometric Algebra can be derived from a single rule that
-the square of the magnitude of any vector <span  class="math">\(\v{a}\)</span> is equal to the
-square of the vector itself.</p>
+<p>For a flat Euclidean space, the most interesting aspects of Geometric Algebra
+can be understood from a single rule that the square of the magnitude of any
+vector <span  class="math">\(\v{a}\)</span> is equal to the square of the vector itself.</p>
 
-<p>With this one rule we can introduce addition and multiplication of two-dimensional vectors, as well as a simple rotation.</p>
-
-<p></p>
+<p>With this one rule we can introduce addition and multiplication of
+two-dimensional vectors, as well as a simple rotation.</p>
 
 <h2 id="one-rule">One rule</h2>
 
@@ -594,11 +527,13 @@ of one:</p>
 
 <p><span  class="math">\[ \v{x}^2 = 1\]</span></p>
 
-<p>Any other vector <span  class="math">\(\v{a}\)</span> within this single dimension can be represented as some multiple
+<p>Any other vector <span  class="math">\(\v{a}\)</span> within this single dimension can be represented as a scalar multiple
 of <span  class="math">\(\v{x}\)</span>, such as <span  class="math">\(5\v{x}\)</span> or
 <span  class="math">\(-3.141579\v{x}\)</span> or, more generally,</p>
 
 <p><span  class="math">\[\v{a} = \vcOne{a}\]</span></p>
+
+<p>where <span  class="math">\(a_x\)</span> is a real number (<span  class="math">\(a_x \in \reals \)</span>).</p>
 
 <p>Evaluating the magnitude-squared of <span  class="math">\(\v{a}\)</span> results in:</p>
 
@@ -610,7 +545,7 @@ of <span  class="math">\(\v{x}\)</span>, such as <span  class="math">\(5\v{x}\)<
 
 <h2 id="orthogonal-basis-vectors">Orthogonal basis vectors</h2>
 
-<p>To describe vectors in two dimensions we need to add a second basis vector <span  class="math">\(y\)</span> with the similar property of unit-magnitude,
+<p>To describe vectors in two dimensions we need to add a second basis vector <span  class="math">\(\v{y}\)</span> with the similar property of unit-magnitude,
 so when multiplied by itself,</p>
 
 <p><span  class="math">\[ \v{y}^2 = 1 \]</span></p>
@@ -664,13 +599,14 @@ forward,</p>
 vectors are associative under addition (and subtraction), as <span  class="math">\(\v{a} +
 \v{b} = \v{b} + \v{a}\)</span>.</p>
 
-<div class="notice activity"><h5>Magnitude squared of two vectors</h5><p>See if you can calculate the magnitude-squared of</p>
+<div class="notice activity"><h5>Magnitude squared of two vectors</h5>
+See if you can calculate the magnitude-squared of
 
-<p><span  class="math">\[\v{a} + \v{b}\]</span></p>
+$$\v{a} + \v{b}$$
 
-<p><details><p><summary>
+<details><p><summary>
 Solution
-</summary></p></p>
+</summary></p>
 
 <p><span  class="math">\[
 \begin{aligned}
@@ -680,12 +616,12 @@ Solution
 \end{aligned}
 \]</span></p>
 
-<p><p>We can't yet go any further as we haven't yet defined what a multiple of two
+<p>We can't yet go any further as we haven't yet defined what a multiple of two
 general vectors means. But soon we'll see that our
 solution here is actually the <a href="https://en.wikipedia.org/wiki/Law_of_cosines">law of cosines</a>.</p>
-</details></p>
-</div>
+</details>
 
+</div>
 
 <h2 id="multiplying-two-vectors">Multiplying two vectors</h2>
 
@@ -707,24 +643,24 @@ solution here is actually the <a href="https://en.wikipedia.org/wiki/Law_of_cosi
 \v{ba} = a_x b_x + a_y b_y - \v{xy}(a_x b_y - a_y b_x)
 \]</span></p>
 
-<p>The general vector product is not commutative, as <span  class="math">\(\v{ab} \neq \v{ba}\)</span>
-nor is it anti-commutative, as <span  class="math">\(\v{ab} \neq -\v{ba}\)</span>.
+<p>The general vector product is not commutative, as <span  class="math">\(\v{ab} \ne \v{ba}\)</span>
+nor is it anti-commutative, as <span  class="math">\(\v{ab} \ne -\v{ba}\)</span>.
 If you are familiar with the traditional vector dot and cross products,
 you may recognise <span  class="math">\(\v{ab}\)</span> as some combination of both, but what is
 relevant is that it is a combination of a scalar (a pure number)
-and a pseudo-scalar (the <span  class="math">\(\v{xy}\)</span> term, which is not scalar, nor is
-it a vector).</p>
+and a bi-vector (the <span  class="math">\(\v{xy}\)</span> term, which is not scalar, nor is
+it a vector, more on this later).</p>
 
-<p>Based on the above, we can add or subtract the two products to end up with either a scalar or pseudo-scalar respectively:</p>
+<p>Based on the above, we can add or subtract the two products to end up with either a scalar or bivector respectively:</p>
 
 <p><span  class="math">\[
 \begin{aligned}
-\v{ab} + \v{ba} &= 2(a_x b_x + a_y b_y) \\
-\v{ab} - \v{ba} &= 2\v{xy}(a_x b_y - a_y b_x)
+\frac{1}{2}(\v{ab} + \v{ba}) &= (a_x b_x + a_y b_y) \\
+\frac{1}{2}(\v{ab} - \v{ba}) &= \v{xy}(a_x b_y - a_y b_x)
 \end{aligned}
 \]</span></p>
 
-<p>Of particular interest is that the pseudo-scalar <span  class="math">\(\v{xy}\)</span> has the
+<p>Of particular interest is that the bivector <span  class="math">\(\v{xy}\)</span> has the
 property that:</p>
 
 <p><span  class="math">\[ (\v{xy})^2 = \v{xyxy} = -\v{xyyx} = -1 \]</span></p>
@@ -747,7 +683,7 @@ are perpendicular and have a magnitude of 1:</p>
 
 <p><span  class="math">\[ \v{ab} = \v{xy}\]</span></p>
 
-<p>then this vector product will rotate any other vector <span  class="math">\(\v{c}\)</span>. To simplify things, let's
+<p>then this vector product will rotate any other two-dimensional vector <span  class="math">\(\v{c}\)</span>. To simplify things, let's
 multiply the unit vector <span  class="math">\(\v{x}\)</span>:</p>
 
 <p><span  class="math">\[
@@ -765,6 +701,9 @@ multiply the unit vector <span  class="math">\(\v{x}\)</span>:</p>
 
 <p>But we will first need to understand Euler's formula to
 appreciate this rotation in its general form.</p>
+
+
+
 
 <footer class=" footline" >
 	
@@ -876,72 +815,6 @@ s.setAttribute('data-timestamp', +new Date());
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1001,12 +874,15 @@ s.setAttribute('data-timestamp', +new Date());
         
 
 
-        
-            <a class="nav nav-prev" href="/" title="The Geometry of Relativity"> <i class="fas fa-chevron-left"></i></a>
-        
-        
-            <a class="nav nav-next" href="/rotations-in-space/" title="Rotations in Space" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
-        
+	 
+	 
+		
+			<a class="nav nav-prev" href="/" title="The Geometry of Relativity"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/rotations-in-space/" title="Rotations in Space" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
     </div>
 
     </section>
@@ -1014,39 +890,24 @@ s.setAttribute('data-timestamp', +new Date());
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1551667303"></script>
-    <script src="/js/perfect-scrollbar.min.js?1551667303"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1551667303"></script>
-    <script src="/js/jquery.sticky.js?1551667303"></script>
-    <script src="/js/featherlight.min.js?1551667303"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1551667303"></script>
-    <script src="/js/highlight.pack.js?1551667303"></script>
+    <script src="/js/clipboard.min.js?1590440449"></script>
+    <script src="/js/perfect-scrollbar.min.js?1590440449"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1590440449"></script>
+    <script src="/js/jquery.sticky.js?1590440449"></script>
+    <script src="/js/featherlight.min.js?1590440449"></script>
+    <script src="/js/highlight.pack.js?1590440449"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1551667303"></script>
-    <script src="/js/learn.js?1551667303"></script>
-    <script src="/js/hugo-learn.js?1551667303"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1590440449"></script>
+    <script src="/js/learn.js?1590440449"></script>
+    <script src="/js/hugo-learn.js?1590440449"></script>
 
-    <link href="/mermaid/mermaid.css?1551667303" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1551667303"></script>
+    <link href="/mermaid/mermaid.css?1590440449" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1590440449"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        renderMathInElement(document.body, {
-            macros: {
-                "\\v": "\\mathbf{#1}",
-                "\\vcOne": "#1_x\\v{x}",
-                "\\vcTwo": "\\vcOne{#1} + #1_y\\v{y}",
-                "\\vcThree": "\\vcTwo{#1} + #1_z\\v{z}",
-                "\\vcFour": "\\vcThree{#1} + #1_t\\v{t}",
-                
-            }
-        });
-    });
-</script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
 
   </body>
 </html>
