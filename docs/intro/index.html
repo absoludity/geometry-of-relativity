@@ -12,19 +12,19 @@
     <title>Intro to Geometric Algebra :: Geometry of Relativity</title>
 
     
-    <link href="/css/nucleus.css?1590440449" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1590440449" rel="stylesheet">
-    <link href="/css/hybrid.css?1590440449" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1590440449" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1590440449" rel="stylesheet">
-    <link href="/css/auto-complete.css?1590440449" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1590440449" rel="stylesheet">
-    <link href="/css/theme.css?1590440449" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1590440449" rel="stylesheet">
+    <link href="/css/nucleus.css?1592773845" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1592773845" rel="stylesheet">
+    <link href="/css/hybrid.css?1592773845" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1592773845" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1592773845" rel="stylesheet">
+    <link href="/css/auto-complete.css?1592773845" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1592773845" rel="stylesheet">
+    <link href="/css/theme.css?1592773845" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1592773845" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1590440449"></script>
+    <script src="/js/jquery-3.3.1.min.js?1592773845"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -43,6 +43,11 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         renderMathInElement(document.body, {
+            
+            
+            
+            
+            
             macros: {
                 "\\v": "\\mathbf{#1}",
                 "\\vcOne": "#1_x\\v{x}",
@@ -171,14 +176,14 @@ div.notice.tip h5:before {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1590440449"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1590440449"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1592773845"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1592773845"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/geometry-of-relativity.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1590440449"></script>
+<script type="text/javascript" src="/js/search.js?1592773845"></script>
 
     
   </div>
@@ -500,86 +505,94 @@ div.notice.tip h5:before {
 
 
 	<p>Geometric Algebra is a line of Mathematics which treats vectors as first-class
-citizens, rather than arrows defined by coordinates on a coordinate
+citizens rather than arrows defined by coordinates on a specific coordinate
 system.</p>
 
 <p>For a flat Euclidean space, the most interesting aspects of Geometric Algebra
 can be understood from a single rule that the square of the magnitude of any
-vector <span  class="math">\(\v{a}\)</span> is equal to the square of the vector itself.</p>
+vector \( \v{a} \) is equal to the square of the vector itself.</p>
 
 <p>With this one rule we can introduce addition and multiplication of
 two-dimensional vectors, as well as a simple rotation.</p>
 
 <h2 id="one-rule">One rule</h2>
 
-<p>The square of the magnitude of an arbitrary vector <span  class="math">\(\v{a}\)</span> is equal to the square of the vector itself:</p>
+<p>The square of the magnitude of an arbitrary vector \( \v{a} \) is equal to the square of the vector itself:</p>
 
 <p><span  class="math">\[ |\v{a}|^2 = \v{a}^2  \]</span></p>
 
-<p>This is similar to the more familiar <a href="https://en.wikipedia.org/wiki/Dot_product#Geometric_definition">dot-product</a> of a vector with itself
-defining the Euclidean magnitude-squared of a vector, but as we will see, much more powerful.</p>
+<p>This is similar to the more familiar
+<a href="https://en.wikipedia.org/wiki/Dot_product#Geometric_definition">dot-product</a>
+of a vector with itself defining the Euclidean magnitude-squared of a vector,
+but as we will see, much more powerful.</p>
 
 <h2 id="normal-basis-vectors">Normal basis vectors</h2>
 
 <p>Starting with a single dimension, we define a normal basis vector
-<span  class="math">\(\v{x}\)</span> (bold will indicate a vector) as having a magnitude
+\( \v{x} \) (bold will indicate a vector) as having a magnitude
 of one:</p>
 
 <p><span  class="math">\[ \v{x}^2 = 1\]</span></p>
 
-<p>Any other vector <span  class="math">\(\v{a}\)</span> within this single dimension can be represented as a scalar multiple
-of <span  class="math">\(\v{x}\)</span>, such as <span  class="math">\(5\v{x}\)</span> or
-<span  class="math">\(-3.141579\v{x}\)</span> or, more generally,</p>
+<p>Any other vector \( \v{a} \) within this single dimension can be represented as a scalar multiple
+of \( \v{x} \), such as \( 5\v{x} \) or
+\( -3.141579\v{x} \) or, more generally,</p>
 
 <p><span  class="math">\[\v{a} = \vcOne{a}\]</span></p>
 
-<p>where <span  class="math">\(a_x\)</span> is a real number (<span  class="math">\(a_x \in \reals \)</span>).</p>
+<p>where \( a_x \) is a real number (\( a_x \in \reals  \)).</p>
 
-<p>Evaluating the magnitude-squared of <span  class="math">\(\v{a}\)</span> results in:</p>
+<p>Evaluating the magnitude-squared of \( \v{a} \) results in:</p>
 
 <p><span  class="math">\[
-\v{a}^2 = (\vcOne{a})^2 = \vcOne{a}\vcOne{a} = a_x^2\v{x}^2 = a_x^2
+\v{a}^2 = (\vcOne{a})^2 = \vcOne{a}\vcOne{a} = a_x^2\v{x}^2 = a_x^2 = |a_x|^2
 \]</span></p>
 
 <p>as we would expect.</p>
 
 <h2 id="orthogonal-basis-vectors">Orthogonal basis vectors</h2>
 
-<p>To describe vectors in two dimensions we need to add a second basis vector <span  class="math">\(\v{y}\)</span> with the similar property of unit-magnitude,
-so when multiplied by itself,</p>
+<p>To describe vectors in two dimensions we need to add a second basis vector
+\( \v{y} \) with the similar property of unit-magnitude, so when multiplied by
+itself,</p>
 
 <p><span  class="math">\[ \v{y}^2 = 1 \]</span></p>
 
-<p>We also need to ensure that this second vector <span  class="math">\(\v{y}\)</span> is orthogonal
-to <span  class="math">\(\v{x}\)</span>, though we don't yet know how to represent this orthogonality.
-Nonetheless, by defining a general two-dimensional vector <span  class="math">\(\v{a}\)</span> as</p>
+<p>We also need to ensure that this second vector \( \v{y} \) is orthogonal
+to \( \v{x} \), though we don't yet know how to represent this orthogonality.
+Nonetheless, by defining a general two-dimensional vector \( \v{a} \) as</p>
 
 <p><span  class="math">\[ \v{a} = \vcTwo{a} \]</span></p>
 
-<p>we can derive orthogonality by using the rule that the magnitude-squared of any vector is equal to the vector squared,
-to evaluate that:</p>
+<p>we can derive orthogonality by using the rule that the magnitude-squared of
+any vector is equal to the vector squared, to evaluate that:</p>
 
-<p><span  class="math">\[
+$$
+
 \begin{aligned}
 \v{a}^2
 &= (\vcTwo{a})(\vcTwo{a}) \\
 &= a_x\v{x}a_x\v{x} + a_x\v{x}a_y\v{y} + a_y\v{y}a_x\v{x} + a_y\v{y}a_y\v{y} \\
-&= a_x^2 + a_y^2 + a_x a_y(\v{xy} + \v{yx})
+&= a_x^2 + a_y^2 + a_x a_y(\v{xy} + \v{yx}) \\
+&= a_x^2 + a_y^2 + 2a_x a_y(\frac{1}{2}(\v{xy} + \v{yx}))
 \end{aligned}
-\]</span></p>
 
-<p>So we see that the square of the magnitude of the vector <span  class="math">\(\v{a}\)</span>  - a scalar number - will
-only equal the square of the vector if</p>
+$$
+
+<p>So the square of the magnitude of the vector, \( |\v{a}|^2 \), will only equal the square of the vector if
+\( \v{xy}+ \v{yx} \) is also a scalar number. If you are familiar with the <a href="https://en.wikipedia.org/wiki/Law_of_cosines">Law of cosines</a> you may recognise the formula and in particular that \( \frac{1}{2}(\v{xy} + \v{yx}) \) is likely to be \( \cos(\theta) \) where \( \theta \) is the angle between the two vectors. For now we will simply note that if,</p>
 
 <p><span  class="math">\[ \v{xy} = -\v{yx} \]</span></p>
 
-<p>This then is the definition of orthogonal vectors - they are anti-commutative.</p>
+<p>then,</p>
 
-<p>With this definition of orthogonality, we have</p>
+<p><span  class="math">\[ \v{a}^2 = a_x^2 + a_y^2 \]</span></p>
 
-<p><span  class="math">\[ \v{a}^2 = x^2 + y^2 \]</span></p>
-
-<p>which is exactly what we are used to - Pythagoras' theorem.</p>
+<p>which is exactly what we are used to - Pythagoras' theorem.
+So for now let us make the tentative definition of orthogonal vectors:
+orthogonal vectors anti-commute. For any two vectors \( \v{x} \)
+and \( \v{y} \), the vectors are orthogonal if they anti-commute so that
+\( \v{xy} = -\v{{yx}} \).</p>
 
 <h2 id="adding-two-vectors">Adding two vectors</h2>
 
@@ -890,19 +903,19 @@ s.setAttribute('data-timestamp', +new Date());
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1590440449"></script>
-    <script src="/js/perfect-scrollbar.min.js?1590440449"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1590440449"></script>
-    <script src="/js/jquery.sticky.js?1590440449"></script>
-    <script src="/js/featherlight.min.js?1590440449"></script>
-    <script src="/js/highlight.pack.js?1590440449"></script>
+    <script src="/js/clipboard.min.js?1592773845"></script>
+    <script src="/js/perfect-scrollbar.min.js?1592773845"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1592773845"></script>
+    <script src="/js/jquery.sticky.js?1592773845"></script>
+    <script src="/js/featherlight.min.js?1592773845"></script>
+    <script src="/js/highlight.pack.js?1592773845"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1590440449"></script>
-    <script src="/js/learn.js?1590440449"></script>
-    <script src="/js/hugo-learn.js?1590440449"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1592773845"></script>
+    <script src="/js/learn.js?1592773845"></script>
+    <script src="/js/hugo-learn.js?1592773845"></script>
 
-    <link href="/mermaid/mermaid.css?1590440449" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1590440449"></script>
+    <link href="/mermaid/mermaid.css?1592773845" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1592773845"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
